@@ -1,27 +1,30 @@
 # shopping-art
 
+Tempat Memamerkan karya-karya inspiratif
 
 # Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step 
 
-Membuat sebuah proyek Django baru.
+- [x] Membuat sebuah proyek Django baru.
 
-Membuat aplikasi dengan nama main pada proyek tersebut.
+    Pada membuat project Django baru kita pertama tama perlu membuat file dan repository baru pada githubbaru untuk diisi. Setelah membuat file baru, dan github maka membuat perintah pada terminal mendambahkan readme dengan `echo "#readme" >> README.md` + `git init`+ `git add README.md` yang berguna untuk mendambahkan readme. Selanjutnya melakukan `git commit -m "first commit"`  untuk commit, selanjutnya mengetik `git branch -M main` untuk membuat branch utama pada repo, Menyambungkan dan membuat remote `git remote add origin <URL_REPO `, dan tahapan terakhir mempush ke repo dengan `git push -u origin main`.
+    Selanjutnya membuat
+- [x] Membuat aplikasi dengan nama main pada proyek tersebut.
 
-Melakukan routing pada proyek agar dapat menjalankan aplikasi main.
+- [x] Melakukan routing pada proyek agar dapat menjalankan aplikasi main.
 
-Membuat model pada aplikasi main dengan nama Item dan memiliki atribut wajib sebagai berikut.
+- [x] Membuat model pada aplikasi main dengan nama Item dan memiliki atribut wajib sebagai berikut.
 
-name sebagai nama item dengan tipe CharField.
+- [x] name sebagai nama item dengan tipe CharField.
 
-amount sebagai jumlah item dengan tipe IntegerField.
+- [x] amount sebagai jumlah item dengan tipe IntegerField.
 
-description sebagai deskripsi item dengan tipe TextField.
+- [x] description sebagai deskripsi item dengan tipe TextField.
 
-Membuat sebuah fungsi pada views.py untuk dikembalikan ke dalam sebuah template HTML yang menampilkan nama aplikasi serta nama dan kelas kamu.
+- [x] Membuat sebuah fungsi pada views.py untuk dikembalikan ke dalam sebuah template HTML yang menampilkan nama aplikasi serta nama dan kelas kamu.
 
-Membuat sebuah routing pada urls.py aplikasi main untuk memetakan fungsi yang telah dibuat pada views.py.
+- [x] Membuat sebuah routing pada urls.py aplikasi main untuk memetakan fungsi yang telah dibuat pada views.py.
 
-Melakukan deployment ke Adaptable terhadap aplikasi yang sudah dibuat sehingga nantinya dapat diakses oleh teman-temanmu melalui Internet.
+- [x] Melakukan deployment ke Adaptable terhadap aplikasi yang sudah dibuat sehingga nantinya dapat diakses oleh teman-temanmu melalui Internet.
 
 
 
