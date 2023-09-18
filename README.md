@@ -1,11 +1,11 @@
-# shopping-art
+# 🖼️ Shopping Art 🛒 🎨
 
 
 ```
-Tempat Memamerkan karya-karya inspiratif
+Tempat Memamerkan karya-karya inspiratif 👨🏻‍🎨
 ```
 
-### Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step 
+### 1. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step 
 
 - [x] Membuat sebuah proyek Django baru.
 
@@ -15,7 +15,7 @@ Tempat Memamerkan karya-karya inspiratif
 
     Setelah berhasil mengsintall djanggo, kita harus mengkonfigurasikan proyek dan menjalankan server. Untuk mengkonfigurasikan proyek dengan menambahkan `*` pada `ALLOWED_HOSTS` sehingga menjadi `ALLOWED_HOSTS = ["*"]`. Tanda `*` berguna untuk mengizinkan akses dari semua host, yang akan memungkinkan aplikasi diakses secara luas. Setelah mengkonfigurasikan proyek selanjutnya saya menginisiasi `.gitignore` yang berguna untuk mengabaikan beberapa berkas-berkas atau direktori-direktori pada Git.
     
-    
+
 - [x] Membuat aplikasi dengan nama main pada proyek tersebut.
     Pada langkah ini, saya menambahkan folfer `templates` dan menambahkan file `main` sebagai html utama. Untuk membuatnya sebagai bagian int, harus menjalankan perintah `python3 manage.py startapp main`. setelah itu, mendaftarkan folder ke dalam proyek dengan menambahkan main pada `INSTALLED_APPS` yang berada pada folder `settings.py`.
 
@@ -54,13 +54,27 @@ Tempat Memamerkan karya-karya inspiratif
 
 
 
-### Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut kaitan antara urls.py, views.py, models.py, dan berkas html.
+### 2. Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut kaitan antara urls.py, views.py, models.py, dan berkas html.
 
 
 
 
-### Jelaskan mengapa kita menggunakan virtual environment? Apakah kita tetap dapat membuat aplikasi web berbasis Django tanpa menggunakan virtual environment?
+### 3. Jelaskan mengapa kita menggunakan virtual environment? Apakah kita tetap dapat membuat aplikasi web berbasis Django tanpa menggunakan virtual environment?
+
+Virtual environment adalah alat yang sangat penting dalam pengembangan perangkat lunak, termasuk dalam pengembangan aplikasi web berbasis Django. Fungsi utamanya adalah memisahkan dan mengisolasi lingkungan kerja proyek Anda dari lingkungan sistem operasi yang lebih luas. Ini memungkinkan Anda untuk menginstal paket dan dependensi proyek secara lokal tanpa mengganggu atau berinterferensi dengan paket global sistem operasi atau proyek lain yang mungkin Anda kerjakan. Selain itu, virtual environment memungkinkan Anda untuk mengelola versi paket yang digunakan dalam proyek tertentu, sehingga Anda dapat memastikan konsistensi dan stabilitas aplikasi Anda. Hal ini juga memudahkan untuk berbagi proyek dengan tim pengembang atau menggantinya ke lingkungan produksi tanpa masalah kompatibilitas.
+
+> Virtual environment dibuat dengan perintah `python -m venv env`, dan diaktifkan dengan perintah `source env/bin/activate`.
+
+Meskipun memungkinkan untuk membuat aplikasi web berbasis Django tanpa menggunakan virtual environment, sangat disarankan untuk selalu menggunakannya. Tanpa virtual environment, Anda mungkin akan menghadapi berbagai masalah, seperti konflik dependensi antara proyek, kesulitan dalam mengelola versi paket, dan risiko merusak paket sistem operasi. Dengan menggunakan virtual environment, Anda dapat menjaga lingkungan proyek Anda bersih, teratur, dan terisolasi, yang pada akhirnya akan membuat pengembangan dan pemeliharaan aplikasi Anda menjadi lebih mudah dan lebih dapat diandalkan. Implementasi virtual environment adalah sebuah praktik terbaik yang akan membantu Anda mengelola konsistensi dari dependencies masing-masing proyek secara efisien, menjauhkan risiko konflik dependencies, dan memastikan kestabilan serta portabilitas aplikasi Anda.
 
 
+### 4. Jelaskan apakah itu MVC, MVT, MVVM dan perbedaan dari ketiganya.
 
-### Jelaskan apakah itu MVC, MVT, MVVM dan perbedaan dari ketiganya.
+
+| MVC         | MVT         | MVVM          |
+| ---        |    ----   |          --- |
+| Model-View-Controller      | Model-View-Template     | Model-View-View-Model   
+| View: Menggambarkan data dari model dalam antarmuka pengguna (UI) dan menampilkan informasi kepada pengguna.| View: Bertanggung jawab untuk menampilkan data kepada pengguna dan menggambarkan tampilan.| View: Menginformasi ke ViewModel terkait interaksi pengguna, dan hanya menampilkan data yang disediakan oleh ViewModel |
+| Controller: Menjembatani hubungan antara View dan Model dan sebagai inti logika dan alur aplikasi dengan menginformasi interaksi user ke Model | Template: Mengambil data dari model dan menampilkannya, berupa HTML  | ViewModel: Perantara antara Model dan View, mengubah data dari Model menjadi format sesuai dengan tampilan |
+|![mvc](linkmvc.png) |![mvp](linkmvp.png) |![mvvm](linkmvvm.png) |
+| MVC merupakan konsep yang sering diterapkan dalam pengembangan perangkat lunak, terutama pada aplikasi desktop dan web konvensional. Prinsip ini memisahkan tiga komponen utama dari aplikasi dengan tujuan untuk meningkatkan kemudahan dalam merawat dan mengembangkan kode.| MVT merupakan pola desain yang khusus digunakan dalam kerangka kerja Django, yang diciptakan khusus untuk pengembangan aplikasi web menggunakan bahasa pemrograman Python. Pola ini menggantikan komponen View dalam MVC dengan yang disebut sebagai Template, yang bertujuan untuk memisahkan dengan lebih tegas antara aspek tampilan dan pemrosesan HTTP. | MVVM merupakan pola desain yang umum diterapkan dalam pengembangan aplikasi yang menekankan antarmuka pengguna (UI), terutama pada platform seperti WPF (Windows Presentation Foundation). Pola ini difokuskan pada konsep pemisahan antara komponen tampilan dan logika bisnis, dengan memanfaatkan ViewModel sebagai perantara di antara keduanya.|
