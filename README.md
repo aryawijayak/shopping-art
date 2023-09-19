@@ -4,6 +4,7 @@
 ```
 Tempat Memamerkan karya-karya inspiratif 👨🏻‍🎨
 ```
+# Tugas 2
 
 ### 1. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step 
 
@@ -71,8 +72,6 @@ Meskipun memungkinkan untuk membuat aplikasi web berbasis Django tanpa menggunak
 
 
 ### 4. Jelaskan apakah itu MVC, MVT, MVVM dan perbedaan dari ketiganya.
-
-
 | MVC         | MVT         | MVVM          |
 | ---        |    ----   |          --- |
 | Model-View-Controller      | Model-View-Template     | Model-View-View-Model   
@@ -82,9 +81,9 @@ Meskipun memungkinkan untuk membuat aplikasi web berbasis Django tanpa menggunak
 | MVC merupakan konsep yang sering diterapkan dalam pengembangan perangkat lunak, terutama pada aplikasi desktop dan web konvensional. Prinsip ini memisahkan tiga komponen utama dari aplikasi dengan tujuan untuk meningkatkan kemudahan dalam merawat dan mengembangkan kode.| MVT merupakan pola desain yang khusus digunakan dalam kerangka kerja Django, yang diciptakan khusus untuk pengembangan aplikasi web menggunakan bahasa pemrograman Python. Pola ini menggantikan komponen View dalam MVC dengan yang disebut sebagai Template, yang bertujuan untuk memisahkan dengan lebih tegas antara aspek tampilan dan pemrosesan HTTP. | MVVM merupakan pola desain yang umum diterapkan dalam pengembangan aplikasi yang menekankan antarmuka pengguna (UI), terutama pada platform seperti WPF (Windows Presentation Foundation). Pola ini difokuskan pada konsep pemisahan antara komponen tampilan dan logika bisnis, dengan memanfaatkan ViewModel sebagai perantara di antara keduanya.|
 
 
-## Tugas 3
+# Tugas 3
 
-### Apa perbedaan antara form POST dan form GET dalam Django?
+### 1. Apa perbedaan antara form POST dan form GET dalam Django?
 | Form POST         | Form GET         |
 | ---        |    ----   |
 | Method POST akan mengirimkan data atau nilai langsung ke action untuk ditampung, tanpa menampilkan pada URL. | Method GET akan menampilkan data/nilai pada URL, kemudian akan ditampung oleh action.
@@ -92,15 +91,28 @@ Meskipun memungkinkan untuk membuat aplikasi web berbasis Django tanpa menggunak
 |Method POST menggunakan variable $_POST untuk menampung data/nilai. | Sedangkan method GET menggunakan variable $_GET untuk menampung data/nilai.
 |Method POST data yang dikirim tidak terbatas| Method GET tidak boleh lebih dari 2047 karakter.
 
-
-###  Apa perbedaan utama antara XML, JSON, dan HTML dalam konteks pengiriman data?
+###  2. Apa perbedaan utama antara XML, JSON, dan HTML dalam konteks pengiriman data?
 | XML         | JSON         | HTML          |
 | ---        |    ----   |          --- |
+|**Struktur Data**: Bahasa markup yang memiliki fleksibilitas tinggi dan dapat digunakan untuk menggambarkan berbagai jenis informasi. Ini memiliki kerangka yang kuat dan menetapkan pedoman untuk mengatur informasi.| **Struktur Data**: Format data yang sederhana yang berisi objek dan larik. Sangat berguna untuk menggambarkan data yang teratur | **Struktur Data**: Sebuah bahasa markup yang digunakan untuk menghasilkan dokumen di lingkungan web.|
+|**Penggunaan**: Transfer data antara aplikasi, mengatur konfigurasi, dan menyimpan data yang memiliki struktur data yang tidak sepenuhnya terstruktur. | **Penggunaan**: Proses pertukaran data antara aplikasi, terutama dalam konteks pengembangan web. Format JSON banyak digunakan dalam aplikasi dan layanan web modern sebagai format standar untuk menerima dan mengirim data. |**Penggunaan**: Membuat halaman web yang dirancang khusus untuk tujuan penyajian dan interaksi dengan pengguna. |
 
+### 3. Mengapa JSON sering digunakan dalam pertukaran data antara aplikasi web modern?
 
-### Mengapa JSON sering digunakan dalam pertukaran data antara aplikasi web modern?
+JSON sering menjadi pilihan utama para pengembang dalam pertukaran data antar aplikasi karena beberapa alasan yang signifikan:
+1. **Format yang Mudah di-parse**: JSON memiliki format yang sangat mudah untuk di-parse, memudahkan pengolahan dan penguraian data. Ini sangat penting dalam pertukaran data antar aplikasi di lingkungan yang serba cepat.
 
-### Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+2. **Ringan dan Berbasis Teks**: Sebagai format berbasis teks, JSON memiliki ukuran yang ringan. Hal ini sangat menguntungkan ketika data perlu dikirimkan melalui jaringan, karena tidak membebani bandwidth.
+
+3. **Dukungan Native Banyak Bahasa**: Banyak bahasa pemrograman memiliki dukungan native untuk parsing JSON. Ini memungkinkan pengembang untuk dengan mudah mengintegrasikan JSON dalam aplikasi mereka tanpa perlu mengandalkan pustaka pihak ketiga atau implementasi khusus.
+
+4. **Efisien dibandingkan XML**: JSON lebih efisien dalam hal penggunaan karakter dibandingkan dengan format lain seperti XML yang menggunakan sistem tag. JSON menggunakan format key-value pair yang lebih sederhana.
+
+5. **Mudah Dibaca Manusia**: JSON lebih mudah dibaca oleh manusia, sehingga mempermudah dalam debugging dan analisis data. Karakter yang lebih sedikit membuatnya lebih bersahabat bagi pengembang.
+
+Dengan kelebihan-kelebihan ini, tidak mengherankan jika JSON menjadi format yang lebih sering digunakan dalam pertukaran data antar aplikasi. Kelebihan ini juga membantu dalam mempercepat proses pemrosesan data, yang sangat penting dalam aplikasi modern yang serba cepat.
+
+### 4. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
 
 - [x] Membuat input form untuk menambahkan objek model pada app sebelumnya.
 
