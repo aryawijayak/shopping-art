@@ -29,8 +29,6 @@ def show_main(request):
     products = Product.objects.all()
 
     context = {
-        'name': 'Pak Bepe', 
-        'class': 'PBP A', 
         'products': products,
 
         'karya1': 'Online Course App', 
@@ -40,7 +38,8 @@ def show_main(request):
         'artist2': 'Arya keren',
 
         'karya3': 'Task Management App', 
-        'artist3': 'Aweka Design'
+        'artist3': 'Aweka Design',
+        'total' : products.__len__(),
     }
 
     return render(request, "main.html", context)
