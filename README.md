@@ -88,13 +88,16 @@ Meskipun memungkinkan untuk membuat aplikasi web berbasis Django tanpa menggunak
 | Form POST         | Form GET         |
 | ---        |    ----   |
 | Method POST akan mengirimkan data atau nilai langsung ke action untuk ditampung, tanpa menampilkan pada URL. | Method GET akan menampilkan data/nilai pada URL, kemudian akan ditampung oleh action.
-|![POST]("https://github.com/aryawijayak/shopping-art/assets/119391657/9dc6f381-558e-4d28-9325-5b669a757026") | ![GET]("https://github.com/aryawijayak/shopping-art/assets/119391657/b0030049-33b6-4118-9eca-068684675494")| 
+|![POST](https://user-images.githubusercontent.com/119391657/268960230-4ca02611-ab78-4685-913b-79ca724cdd0e.png) | ![GET](https://user-images.githubusercontent.com/119391657/268960029-d7e2cba8-1164-40a6-96bc-97ac26ad07f4.png)| 
 |Method POST menggunakan variable $_POST untuk menampung data/nilai. | Sedangkan method GET menggunakan variable $_GET untuk menampung data/nilai.
 |Method POST data yang dikirim tidak terbatas| Method GET tidak boleh lebih dari 2047 karakter.
 
 
 ###  Apa perbedaan utama antara XML, JSON, dan HTML dalam konteks pengiriman data?
 | XML         | JSON         | HTML          |
+| ---        |    ----   |          --- |
+
+
 ### Mengapa JSON sering digunakan dalam pertukaran data antara aplikasi web modern?
 
 ### Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
@@ -106,18 +109,18 @@ Meskipun memungkinkan untuk membuat aplikasi web berbasis Django tanpa menggunak
 
 - [x] Membuat routing URL untuk masing-masing views yang telah ditambahkan pada poin 2.
 
-## Mengakses kelima URL di poin 2 menggunakan Postman, membuat screenshot dari hasil akses URL pada Postman, dan menambahkannya ke dalam README.md.
+### Mengakses kelima URL di poin 2 menggunakan Postman, membuat screenshot dari hasil akses URL pada Postman, dan menambahkannya ke dalam README.md.
 1. HTML
-![HTML]("https://github.com/aryawijayak/shopping-art/assets/119391657/ac73747d-28a5-4781-9343-04bd887c79a8")
+![HTML ](https://user-images.githubusercontent.com/119391657/268957657-ef90f573-6e43-465a-bf71-1ad414ca9841.png)
 
 2. JSON (ALL DATA)
-![JSON ALL]("https://github.com/aryawijayak/shopping-art/assets/119391657/6a744988-1aba-4449-be90-b67f7092056a")
+![JSON ALL](https://user-images.githubusercontent.com/119391657/268958115-e29deec4-9a0a-41cb-b881-ebf9c3166d4f.png)
 
 3. JSON (BY ID)
-![JSON ID]("https://github.com/aryawijayak/shopping-art/assets/119391657/ec9e6856-b16e-4137-abe7-6fe98d7d39cd")
+![JSON ID](https://user-images.githubusercontent.com/119391657/268959285-0bb6efa8-7f78-4c0e-a7e1-32eae7321d73.png)
 
 4. XML (ALL DATA)
-![XML ALL]("https://github.com/aryawijayak/shopping-art/assets/119391657/892c1c9c-8183-4026-be39-fc0ab606d925")
+![XML ALL](https://user-images.githubusercontent.com/119391657/268959612-901e45a8-ddb1-47d3-b97a-75bc75b34192.png)
 
 5. XML (BY ID)
-![XML ID]("https://github.com/aryawijayak/shopping-art/assets/119391657/c5c783ee-d90e-4193-abb2-fd8b0ac1a5c7")
+![XML ID](https://user-images.githubusercontent.com/119391657/268959801-9db045a6-847a-4923-b94c-bec4d6011efe.png)
