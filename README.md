@@ -115,7 +115,28 @@ Dengan kelebihan-kelebihan ini, tidak mengherankan jika JSON menjadi format yang
 ### 4. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
 
 - [x] Membuat input form untuk menambahkan objek model pada app sebelumnya.
+    Pertama Buatlah file `template/base.html` pada direktori root yang berguna untuk memberikan inisiasi html default tanpa perlu membuat inisiasi html ddi setiap page .html yang kita buat. Isi dari base.html adalah sebagai berikut:
+    ``````
+        {% load static %}
+    <!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8" />
+            <meta
+                name="viewport"
+                content="width=device-width, initial-scale=1.0"
+            />
+            {% block meta %}
+            {% endblock meta %}
+        </head>
 
+        <body>
+            {% block content %}
+            {% endblock content %}
+        </body>
+    </html>
+   ``````
+    
 
 - [x] Tambahkan 5 fungsi views untuk melihat objek yang sudah ditambahkan dalam format HTML, XML, JSON, XML by ID, dan JSON by ID.
 
