@@ -80,3 +80,44 @@ Meskipun memungkinkan untuk membuat aplikasi web berbasis Django tanpa menggunak
 | Controller: Menjembatani hubungan antara View dan Model dan sebagai inti logika dan alur aplikasi dengan menginformasi interaksi user ke Model | Template: Mengambil data dari model dan menampilkannya, berupa HTML  | ViewModel: Perantara antara Model dan View, mengubah data dari Model menjadi format sesuai dengan tampilan |
 |![mvc](https://user-images.githubusercontent.com/119391657/268604124-47902dbc-cc01-46af-b077-9ba64c31e042.png) |![mvp](https://user-images.githubusercontent.com/119391657/268604321-e031b08c-f41e-4e57-81e7-184fd9a8959b.png) |![mvvm](https://user-images.githubusercontent.com/119391657/268604466-b3808d32-e983-4b1e-a385-1c6ea8e8c89b.png) |
 | MVC merupakan konsep yang sering diterapkan dalam pengembangan perangkat lunak, terutama pada aplikasi desktop dan web konvensional. Prinsip ini memisahkan tiga komponen utama dari aplikasi dengan tujuan untuk meningkatkan kemudahan dalam merawat dan mengembangkan kode.| MVT merupakan pola desain yang khusus digunakan dalam kerangka kerja Django, yang diciptakan khusus untuk pengembangan aplikasi web menggunakan bahasa pemrograman Python. Pola ini menggantikan komponen View dalam MVC dengan yang disebut sebagai Template, yang bertujuan untuk memisahkan dengan lebih tegas antara aspek tampilan dan pemrosesan HTTP. | MVVM merupakan pola desain yang umum diterapkan dalam pengembangan aplikasi yang menekankan antarmuka pengguna (UI), terutama pada platform seperti WPF (Windows Presentation Foundation). Pola ini difokuskan pada konsep pemisahan antara komponen tampilan dan logika bisnis, dengan memanfaatkan ViewModel sebagai perantara di antara keduanya.|
+
+
+## Tugas 3
+
+### Apa perbedaan antara form POST dan form GET dalam Django?
+| Form POST         | Form GET         |
+| ---        |    ----   |
+| Method POST akan mengirimkan data atau nilai langsung ke action untuk ditampung, tanpa menampilkan pada URL. | Method GET akan menampilkan data/nilai pada URL, kemudian akan ditampung oleh action.
+|![POST]("https://github.com/aryawijayak/shopping-art/assets/119391657/9dc6f381-558e-4d28-9325-5b669a757026") | ![GET]("https://github.com/aryawijayak/shopping-art/assets/119391657/b0030049-33b6-4118-9eca-068684675494")| 
+|Method POST menggunakan variable $_POST untuk menampung data/nilai. | Sedangkan method GET menggunakan variable $_GET untuk menampung data/nilai.
+|Method POST data yang dikirim tidak terbatas| Method GET tidak boleh lebih dari 2047 karakter.
+
+
+###  Apa perbedaan utama antara XML, JSON, dan HTML dalam konteks pengiriman data?
+| XML         | JSON         | HTML          |
+### Mengapa JSON sering digunakan dalam pertukaran data antara aplikasi web modern?
+
+### Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+
+- [x] Membuat input form untuk menambahkan objek model pada app sebelumnya.
+
+
+- [x] Tambahkan 5 fungsi views untuk melihat objek yang sudah ditambahkan dalam format HTML, XML, JSON, XML by ID, dan JSON by ID.
+
+- [x] Membuat routing URL untuk masing-masing views yang telah ditambahkan pada poin 2.
+
+## Mengakses kelima URL di poin 2 menggunakan Postman, membuat screenshot dari hasil akses URL pada Postman, dan menambahkannya ke dalam README.md.
+1. HTML
+![HTML]("https://github.com/aryawijayak/shopping-art/assets/119391657/ac73747d-28a5-4781-9343-04bd887c79a8")
+
+2. JSON (ALL DATA)
+![JSON ALL]("https://github.com/aryawijayak/shopping-art/assets/119391657/6a744988-1aba-4449-be90-b67f7092056a")
+
+3. JSON (BY ID)
+![JSON ID]("https://github.com/aryawijayak/shopping-art/assets/119391657/ec9e6856-b16e-4137-abe7-6fe98d7d39cd")
+
+4. XML (ALL DATA)
+![XML ALL]("https://github.com/aryawijayak/shopping-art/assets/119391657/892c1c9c-8183-4026-be39-fc0ab606d925")
+
+5. XML (BY ID)
+![XML ID]("https://github.com/aryawijayak/shopping-art/assets/119391657/c5c783ee-d90e-4193-abb2-fd8b0ac1a5c7")
