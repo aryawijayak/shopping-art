@@ -1,7 +1,172 @@
 {% extends 'base.html' %}
 
 {% block meta %}
-    <title>Login</title>
+
+<style>
+
+    body {
+        background-color: #f4f7ff;
+    }
+
+
+    h1, h2, h3, h4, h5, p, th, td, a, button {
+        font-family: 'Poppins', sans-serif;
+    }
+    
+    .navbar {
+        position: sticky;
+        top: 0;
+        background-color: #ffffff;
+        padding: 16px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 100; 
+        margin-bottom: 20px;
+    }
+
+    .navbar img {
+        max-height: 28px;
+        
+    }
+
+    .content-container {
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+        min-height: 0;
+        text-align: center;
+        margin-bottom: 5px;
+    }
+
+    .text-center {
+        text-align: center;
+        margin-bottom: 2px;
+    }
+    
+    .banner {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 50px; 
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 20px;
+        background-color: #4162FF; 
+        border-radius: 20px 20px 20px 20px; 
+        margin-bottom: 20px
+    }
+
+    th {
+        border: 1px solid #ffffff;
+        padding: 16px; 
+        text-align: left;
+        color: #fff; 
+        font-size: 18px; 
+    }
+
+    td {
+        border: 1px solid #ffffff;
+        padding: 12px;
+        text-align: left;
+        background-color: #EEF4FB; 
+        color: #060a21; 
+        line-height: 150%;
+    }
+
+    td.description {
+        max-width: 400px; 
+        overflow-y: auto;
+    }
+
+
+    .card-container {
+        display: flex;
+        flex-wrap: nowrap; 
+        justify-content: flex-start; 
+        gap: 20px;
+        overflow-x: auto; 
+        white-space: nowrap; 
+    }
+
+    .card {
+        background-color: #ffffff;
+        margin: 10px;
+        width: 300px; 
+        border-radius: 24px;
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0);
+        display: flex; 
+        flex-direction: column; 
+        align-items: center; 
+        margin-bottom: 28px
+    }
+    .card img {
+        max-width: 100%;
+        border-radius: 24px;
+        height: auto;
+    }
+
+    .card-content {
+        padding: 10px; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card-content h4 {
+        font-size: 18px;
+        margin: 5px 0; 
+    }
+
+    .card-content p {
+        font-size: 14px;
+        margin: 5px 0; 
+    }
+
+    
+    .card-grid {
+        display: flex;
+        flex-direction: row; 
+        flex-wrap: nowrap; 
+        justify-content: flex-start; 
+        gap: 20px; 
+        overflow-x: auto; 
+        white-space: nowrap; 
+    }
+
+
+@media (max-width: 768px) {
+    .card {
+        width: calc(50% - 20px); 
+    }
+}
+
+@media (min-width: 769px) {
+    .card {
+        width: calc(33.33% - 20px); 
+    }
+}
+
+.add-product-button {
+    display: inline-flex;
+    height: 48px;
+    padding: 4px 40px;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    border-radius: 12px;
+    background: var(--primary-blue, #4162FF);
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    cursor: pointer; 
+}
+
+</style>
+
+    <title > Login </title>
 {% endblock meta %}
 
 {% block content %}
@@ -25,7 +190,8 @@
 
             <tr>
                 <td></td>
-                <td><input class="btn login_btn" type="submit" value="Login"></td>
+                <td><input class=" add-product-button"  type="submit" value="Login"\ >
+                </td>
             </tr>
         </table>
     </form>
