@@ -81,6 +81,9 @@
             overflow-y: auto;
         }
 
+        .center-text {
+            text-align: center;
+        }
 
         .card-container {
             display: flex;
@@ -102,6 +105,7 @@
             align-items: center; 
             margin-bottom: 28px
         }
+
         .card img {
             max-width: 100%;
             border-radius: 24px;
@@ -137,32 +141,74 @@
         }
 
     
-    @media (max-width: 768px) {
-        .card {
-            width: calc(50% - 20px); 
+        @media (max-width: 768px) {
+            .card {
+                width: calc(50% - 20px); 
+            }
         }
-    }
 
-    @media (min-width: 769px) {
-        .card {
-            width: calc(33.33% - 20px); 
+        @media (min-width: 769px) {
+            .card {
+                width: calc(33.33% - 20px); 
+            }
         }
-    }
 
-    .add-product-button {
-        display: inline-flex;
-        height: 48px;
-        padding: 4px 16px;
-        justify-content: center;
-        align-items: center;
-        gap: 8px;
-        border-radius: 12px;
-        background: var(--primary-blue, #4162FF);
-        color: #fff;
-        text-decoration: none;
-        border: none;
-        cursor: pointer; 
-    }
+        .add-product-button {
+            display: inline-flex;
+            height: 48px;
+            padding: 4px 16px;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            border-radius: 12px;
+            background: var(--primary-blue, #4162FF);
+            color: #fff;
+            text-decoration: none;
+            border: none;
+            cursor: pointer; 
+        }
+
+        .logout-button {
+            background-color: #ff1d1d; 
+            width:96px
+        }
+
+        .action-cell {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            width: 100%; 
+            
+        }
+
+        .action-buttons a {
+            width: 100%;
+        }
+
+        .svg-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 12px;
+            background-color: var(--primary-red, #ff1d1d);
+            color: #fff;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            height: 48px;
+            padding: 4px 16px;
+            min-width: 56px;
+        }
+
+</style>
+
 
 </style>
 
@@ -172,7 +218,7 @@
 </div>
 
 <div class="content-container">
-    <img class="banner" alt="Banner " src="https://github.com/aryawijayak/shopping-art/assets/119391657/ad49e318-ba6a-4497-ba5c-3e730b5d2816">
+    <img class="banner" alt="Banner " src="https://github.com/aryawijayak/shopping-art/assets/119391657/ad49e318-ba6a-4497-ba5c-3e730b5d2816" loading="lazy">
     <h1>🖼️ 👨🏻‍🎨 List of Art 🎨 🔥</h1>
 
 </div>
@@ -199,7 +245,7 @@
     </div>
     
     <div class="text-center">
-        <h4 class="total">Anda telah membuat karya sebanyak: {{total}} karya 🎨🖼️</h4>
+        <h2 class="total">Anda telah membuat karya sebanyak: {{total}} karya 🎨🖼️</h2>
     </div>
 
     <table>
@@ -208,30 +254,48 @@
             <th>Price</th>
             <th>Description</th>
             <th>Date Added</th>
+            <th>Amount</th>
+            <th>Actions</th>
         </tr>
-    
-        {% comment %} Berikut cara memperlihatkan data produk di bawah baris ini {% endcomment %}
     
         {% for product in products %}
             <tr>
-                <td>{{product.name}}</td>
-                <td>{{product.price}}</td>
-                <td class="description">{{ product.description }}</td>
-                <td>{{product.date_added}}</td>
+                <td>{{ product.name }}</td>
+                <td class="center-text" >{{ product.price }}</td>
+                <td class="description" >{{ product.description }}</td>
+                <td class="center-text" >{{ product.date_added }}</td>
+                <td class="center-text" >{{ product.amount }}</td>
+                <td class="action-row"> 
+                    <div class="action-buttons">
+                        <a href="{% url 'main:increase_product_amount' product.id 1 %}" class="add-product-button">
+                            Tambah
+                        </a>
+                        
+                        <a href="{% url 'main:decrease_product_amount' product.id 1 %}" class="add-product-button">
+                            Kurang
+                        </a>
+
+                        </a>
+                        <a href="{% url 'main:remove_product' product.id %}" class="add-product-button svg-button">
+                            <img src="https://svgur.com/i/xtJ.svg" alt="SVG Image">
+                        </a>
+
+                    </div>
+                </td>
             </tr>
         {% endfor %}
     </table>
     
     <br />
     
-    <h4>Sesi terakhir login: {{ last_login }} </h4>
+    <h3>Sesi terakhir login: {{ last_login }} </h3>
 
-    <a href="{% url 'main:create_product' %}" class="add-product-button">
+    <a href="{% url 'main:logout' %}" class=" add-product-button logout-button">
+        Logout
+    </a>
+
+    <a href="{% url 'main:create_product' %}" class="add-product-button ">
         Add New Product
     </a>
 
-    <a href="{% url 'main:logout' %}" class=" add-product-button">
-            Logout
-    </a>
-    
 {% endblock content %}

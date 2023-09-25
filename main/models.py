@@ -7,3 +7,16 @@ class Product(models.Model):
     date_added = models.DateField(auto_now_add=True)
     price = models.IntegerField()
     description = models.TextField()
+    amount = models.PositiveIntegerField(default=1)  
+
+    def __str__(self):
+        return self.name
+    
+    def increase_amount(self, amount):
+        self.amount += amount
+        self.save()
+
+    def decrease_amount(self, amount):
+        if self.amount >= amount:
+            self.amount -= amount
+            self.save()
