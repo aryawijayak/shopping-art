@@ -3,166 +3,112 @@
 {% block meta %}
 
 <style>
-
     body {
-        background-color: #f4f7ff;
+        background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/089d21ad-7782-4104-89c2-a65435feaa61/d9dbds5-953028f0-861a-4db8-9b6f-91162fe1959d.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzA4OWQyMWFkLTc3ODItNDEwNC04OWMyLWE2NTQzNWZlYWE2MVwvZDlkYmRzNS05NTMwMjhmMC04NjFhLTRkYjgtOWI2Zi05MTE2MmZlMTk1OWQuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.V4cjYqRZbpYo5gZ_cXGMswU-GI-vp3KNKuVhEjE6Clw'); /* Gantilah 'path-to-your-image' dengan path ke gambar GIF Anda */
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        position: relative; 
     }
 
+    .login-card h1,
+    .login-card label,
+    .login-card a {
+        font-family: 'Poppins', sans-serif;
+        color: rgb(19, 10, 54);
+    }
 
-    h1, h2, h3, h4, h5, p, th, td, a, button {
+    .login-card a {
+        font-family: 'Poppins', sans-serif;
+        color: #4162FF;
+        text-decoration: underline; 
+    }
+
+    .login-black{
+        font-family: 'Poppins', sans-serif;
+        color:rgb(19, 10, 54);
+    }
+
+    .login-card {
+        text-align: center;
+        background-color: #ffffffa9;
+        border-radius: 32px;
+        padding: 30px;
+        width: 400px;
+        text-align: center;
+        padding-top: 50px;
+        backdrop-filter: blur(6px);
+        border: 2px solid rgba(255, 255, 255, 0.439); 
+    }
+
+    .login-card h1 {
         font-family: 'Poppins', sans-serif;
     }
-    
-    .navbar {
-        position: sticky;
-        top: 0;
-        background-color: #ffffff;
-        padding: 16px 20px;
-        display: flex;
-        justify-content: space-between;
+
+    .login-card form {
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .login-card input[type="text"],
+    .login-card input[type="password"] {
+        font-family: 'Poppins', sans-serif;
+        color: black; 
+        background-color: white;
+    }
+
+    .login-card .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+    }
+
+    .login-card .form-group label {
+        font-family: 'Poppins', sans-serif;
+        margin-bottom: 8px;
+        text-align: left; 
+    }
+
+    .login-card .form-control {
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    padding: 12px; 
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    margin-bottom: 12px;
+    font-size: 16px; 
+    background-color: white;
+    }
+
+
+    .login-card .add-product-button {
+        font-size: 16px;
+        display: inline-flex;
+        height: 56px;
+        padding: 8px 48px;
+        justify-content: center;
         align-items: center;
-        z-index: 100; 
-        margin-bottom: 20px;
+        gap: 16px;
+        border-radius: 16px;
+        background: var(--primary-blue, #4162FF);
+        color: #ffffff;
+        text-decoration: none;
+        border: none;
+        cursor: pointer;
     }
 
-    .navbar img {
-        max-height: 28px;
-        
+    .logo-image {
+    max-width: 100px; 
+    height: auto; 
+    display: block; 
+    margin: 0 auto; 
     }
-
-    .content-container {
-        display: flex;
-        flex-direction: column; 
-        align-items: center;
-        min-height: 0;
-        text-align: center;
-        margin-bottom: 5px;
-    }
-
-    .text-center {
-        text-align: center;
-        margin-bottom: 2px;
-    }
-    
-    .banner {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 50px; 
-    }
-
-    table {
-        border-collapse: collapse;
-        width: 100%;
-        margin-top: 20px;
-        background-color: #4162FF; 
-        border-radius: 20px 20px 20px 20px; 
-        margin-bottom: 20px
-    }
-
-    th {
-        border: 1px solid #ffffff;
-        padding: 16px; 
-        text-align: left;
-        color: #fff; 
-        font-size: 18px; 
-    }
-
-    td {
-        border: 1px solid #ffffff;
-        padding: 12px;
-        text-align: left;
-        background-color: #EEF4FB; 
-        color: #060a21; 
-        line-height: 150%;
-    }
-
-    td.description {
-        max-width: 400px; 
-        overflow-y: auto;
-    }
-
-
-    .card-container {
-        display: flex;
-        flex-wrap: nowrap; 
-        justify-content: flex-start; 
-        gap: 20px;
-        overflow-x: auto; 
-        white-space: nowrap; 
-    }
-
-    .card {
-        background-color: #ffffff;
-        margin: 10px;
-        width: 300px; 
-        border-radius: 24px;
-        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0);
-        display: flex; 
-        flex-direction: column; 
-        align-items: center; 
-        margin-bottom: 28px
-    }
-    .card img {
-        max-width: 100%;
-        border-radius: 24px;
-        height: auto;
-    }
-
-    .card-content {
-        padding: 10px; 
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .card-content h4 {
-        font-size: 18px;
-        margin: 5px 0; 
-    }
-
-    .card-content p {
-        font-size: 14px;
-        margin: 5px 0; 
-    }
-
-    
-    .card-grid {
-        display: flex;
-        flex-direction: row; 
-        flex-wrap: nowrap; 
-        justify-content: flex-start; 
-        gap: 20px; 
-        overflow-x: auto; 
-        white-space: nowrap; 
-    }
-
-
-@media (max-width: 768px) {
-    .card {
-        width: calc(50% - 20px); 
-    }
-}
-
-@media (min-width: 769px) {
-    .card {
-        width: calc(33.33% - 20px); 
-    }
-}
-
-.add-product-button {
-    display: inline-flex;
-    height: 48px;
-    padding: 4px 40px;
-    justify-content: center;
-    align-items: center;
-    gap: 16px;
-    border-radius: 12px;
-    background: var(--primary-blue, #4162FF);
-    color: #fff;
-    text-decoration: none;
-    border: none;
-    cursor: pointer; 
-}
 
 </style>
 
@@ -171,29 +117,25 @@
 
 {% block content %}
 
-<div class = "login">
+<div class="login-card">
+    
+    <img src="https://user-images.githubusercontent.com/119391657/270732366-2e835f39-83cc-43de-b22b-df914ade0c93.png" alt="Logo" class="logo-image">
 
-    <h1>Login</h1>
-
+    <h1>Login Shopping Art</h1>
+    
     <form method="POST" action="">
         {% csrf_token %}
-        <table>
-            <tr>
-                <td>Username: </td>
-                <td><input type="text" name="username" placeholder="Username" class="form-control"></td>
-            </tr>
-                    
-            <tr>
-                <td>Password: </td>
-                <td><input type="password" name="password" placeholder="Password" class="form-control"></td>
-            </tr>
-
-            <tr>
-                <td></td>
-                <td><input class=" add-product-button"  type="submit" value="Login"\ >
-                </td>
-            </tr>
-        </table>
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" name="username" id="username" placeholder="Username" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" placeholder="Password" class="form-control">
+        </div>
+        <div class="form-group">
+            <input class="add-product-button" type="submit" value="Login">
+        </div>
     </form>
 
     {% if messages %}
@@ -202,10 +144,15 @@
                 <li>{{ message }}</li>
             {% endfor %}
         </ul>
-    {% endif %}     
+    {% endif %}
+    <div class="login-black">
+        Don't have an account yet? 
+        <div class="login-blue" >
+            <a href="{% url 'main:register' %}" >Register Now</a>
+        </div>
         
-    Don't have an account yet? <a href="{% url 'main:register' %}">Register Now</a>
-
+    </div>
+    
 </div>
 
 {% endblock content %}

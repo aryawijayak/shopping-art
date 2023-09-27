@@ -13,13 +13,14 @@ from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
 import datetime
 from django.shortcuts import get_object_or_404
-from django.http import JsonResponse
 
 
 
 @login_required(login_url='/login')
 def show_main(request):
-    products = Product.objects.all()
+    
+    products = Product.objects.filter(user=request.user)
+
     context = {
         'name': request.user.username,
         'amount': 2000000,
@@ -103,16 +104,19 @@ def logout_user(request):
     response.delete_cookie('last_login')
     return response
 
+@login_required(login_url='/login')
 def increase_product_amount(request, product_id, amount):
     product = get_object_or_404(Product, pk=product_id)
     product.increase_amount(amount)
     return HttpResponseRedirect(reverse('main:show_main'))
 
+@login_required(login_url='/login')
 def decrease_product_amount(request, product_id, amount):
     product = get_object_or_404(Product, pk=product_id)
     product.decrease_amount(amount)
     return HttpResponseRedirect(reverse('main:show_main'))
 
+@login_required(login_url='/login')
 def remove_product(request, id):
     Product.objects.filter(pk=id).delete()
 
