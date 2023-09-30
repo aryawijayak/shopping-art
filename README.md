@@ -1,42 +1,8 @@
 # 🖼️ Shopping Art 🛒 🎨
 
-<style>
-        table {
-        border-collapse: collapse;
-        width: 100%;
-        margin-top: 20px;
-        background-color: #4162FF; 
-
-        margin-bottom: 20px
-    }
-
-    th {
-        border: 1px solid #ffffff;
-        padding: 16px; 
-        text-align: left;
-        color: #fff; 
-        font-size: 18px; 
-    }
-
-    td {
-        border: 1px solid #ffffff;
-        padding: 12px;
-        text-align: left;
-        background-color: #EEF4FB; 
-        color: #060a21; 
-        line-height: 150%;
-    }
-
-    td.description {
-        max-width: 400px; 
-        overflow-y: auto;
-    }
-
-</style>
-
-
-    Dalam era digital ini, seni sering diabaikan dan kurang dihargai. Website shopping art muncul sebagai solusi, memberikan seniman platform untuk memamerkan dan menjual karya mereka kepada audiens yang lebih luas, mengubah cara kita melihat dan menghargai seni dalam konteks digital 👨🏻‍🎨
-
+```
+Dalam era digital ini 🏙️, seni sering diabaikan dan kurang dihargai 😢. Website shopping art muncul sebagai solusi, memberikan seniman platform untuk memamerkan dan menjual karya mereka kepada audiens yang lebih luas 🖼️, mengubah cara kita melihat dan menghargai seni dalam konteks digital 👨🏻‍🎨
+``````
 
 #  Tugas 2
 <details>
