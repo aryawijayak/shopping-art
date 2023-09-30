@@ -1,8 +1,8 @@
 # 🖼️ Shopping Art 🛒 🎨
 
-```
-Dalam era digital ini 🏙️, seni sering diabaikan dan kurang dihargai 😢. Website shopping art muncul sebagai solusi, memberikan seniman platform untuk memamerkan dan menjual karya mereka kepada audiens yang lebih luas 🖼️, mengubah cara kita melihat dan menghargai seni dalam konteks digital 👨🏻‍🎨
-``````
+
+`Dalam era digital ini 🏙️, seni sering diabaikan dan kurang dihargai 😢. Website shopping art muncul sebagai solusi, memberikan seniman platform untuk memamerkan dan menjual karya mereka kepada audiens yang lebih luas 🖼️, mengubah cara kita melihat dan menghargai seni dalam konteks digital 👨🏻‍🎨`
+
 
 #  Tugas 2
 <details>
