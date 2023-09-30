@@ -83,7 +83,6 @@ Meskipun memungkinkan untuk membuat aplikasi web berbasis Django tanpa menggunak
 </details>
 
 <br>
-<br>
 
 # Tugas 3
 
@@ -396,7 +395,6 @@ Pada akhirnya kita berhasil menambahkan fungsi tabel 🤩 pada website shopping 
 ![JSON ID](https://user-images.githubusercontent.com/119391657/268959285-0bb6efa8-7f78-4c0e-a7e1-32eae7321d73.png)
 </details>
 
-<br>
 <br>
 
 # Tugas 4
@@ -745,9 +743,6 @@ Penggunaan cookies aman atau tidak tergantung pada cara Anda mengimplementasikan
 </details>
 
 <br>
-<br>
-
-
 
 # Tugas 5
 
