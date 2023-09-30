@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<style>
+
+    body {
+        background-color: #f4f7ff;
+    }
+
+    h1, h2, h3, h4, h5, p, th, td, a, button {
+        font-family: 'Poppins', sans-serif;
+    }
+    
+    .navbar {
+        position: sticky;
+        top: 0;
+        background-color: #ffffff;
+        padding: 16px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 100; 
+        margin-bottom: 20px;
+    }
+
+    .navbar img {
+        max-height: 28px;
+        
+    }
+
+    .content-container {
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+        min-height: 0;
+        text-align: center;
+        margin-bottom: 5px;
+    }
+    
+    .banner {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 50px; 
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 20px;
+        background-color: #4162FF; 
+
+        margin-bottom: 20px
+    }
+
+    th {
+        border: 1px solid #ffffff;
+        padding: 16px; 
+        text-align: left;
+        color: #fff; 
+        font-size: 18px; 
+    }
+
+    td {
+        border: 1px solid #ffffff;
+        padding: 12px;
+        text-align: left;
+        background-color: #EEF4FB; 
+        color: #060a21; 
+        line-height: 150%;
+    }
+
+    td.description {
+        max-width: 400px; 
+        overflow-y: auto;
+    }
+
+.add-product-button {
+    display: inline-flex;
+    height: 48px;
+    padding: 4px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 12px;
+    background: var(--primary-blue, #4162FF);
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    cursor: pointer; 
+}
+
+</style>
+
+<div class="navbar">
+    <img src="https://github.com/aryawijayak/shopping-art/assets/119391657/7ea7f648-a457-4e65-a45f-f90796663489" alt="Logo">
+</div>
+
+<h1>Edit Product</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    <table>
+        {{ form.as_table }}
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" value="Edit Product" class="add-product-button"/>
+            </td>
+        </tr>
+    </table>
+</form>
+
+{% endblock %}

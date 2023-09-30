@@ -14,29 +14,15 @@ from django.contrib.auth.decorators import login_required
 import datetime
 from django.shortcuts import get_object_or_404
 
-
-
 @login_required(login_url='/login')
 def show_main(request):
-    
     products = Product.objects.filter(user=request.user)
-
     context = {
         'name': request.user.username,
-        'amount': 2000000,
+        'class': "PBP C",
         'description': 'Lukisan langka hanya ada satu satunya di dunia',
-
         'products': products,
         'last_login': request.COOKIES['last_login'],
-
-        'karya1': 'Online Course App', 
-        'artist1': 'Arya Wijaya Kusuma', 
-
-        'karya2': 'Private Tutor App', 
-        'artist2': 'Arya keren',
-
-        'karya3': 'Task Management App', 
-        'artist3': 'Aweka Design',
         'total' : products.__len__(),
     }
 
@@ -104,23 +90,33 @@ def logout_user(request):
     response.delete_cookie('last_login')
     return response
 
-@login_required(login_url='/login')
 def increase_product_amount(request, product_id, amount):
     product = get_object_or_404(Product, pk=product_id)
     product.increase_amount(amount)
     return HttpResponseRedirect(reverse('main:show_main'))
 
-@login_required(login_url='/login')
 def decrease_product_amount(request, product_id, amount):
     product = get_object_or_404(Product, pk=product_id)
     product.decrease_amount(amount)
     return HttpResponseRedirect(reverse('main:show_main'))
 
-@login_required(login_url='/login')
 def remove_product(request, id):
     Product.objects.filter(pk=id).delete()
 
     response = HttpResponseRedirect(reverse("main:show_main"))
     return response
 
+def edit_product(request, id):
+    # Get product berdasarkan ID
+    product = Product.objects.get(pk = id)
 
+    # Set product sebagai instance dari form
+    form = ProductForm(request.POST or None, instance=product)
+
+    if form.is_valid() and request.method == "POST":
+        # Simpan form dan kembali ke halaman awal
+        form.save()
+        return HttpResponseRedirect(reverse('main:show_main'))
+
+    context = {'form': form}
+    return render(request, "edit_product.html", context)

@@ -34,6 +34,9 @@
         text-decoration: underline; 
     }
 
+    .text-titile{
+        font-size: 32px;
+    }
 
     .register-card {
         text-align: center;
@@ -122,19 +125,6 @@
     <img src="https://user-images.githubusercontent.com/119391657/270732366-2e835f39-83cc-43de-b22b-df914ade0c93.png" alt="Logo" class="logo-image">
     <h1 class="center-align" >Register</h1>  
     
-        <!-- <form method="POST" >  
-            {% csrf_token %}  
-            <table>  
-                {{ form.as_table }}  
-                <tr>  
-                    <td></td>
-                    <td >
-                        <input type="submit" name="submit" value="Daftar" class=" add-product-button " >
-                    </td>  
-                </tr>  
-            </table>  
-        </form> -->
-
         <form method="POST">
             {% csrf_token %}
             <div class="form-group">
@@ -162,8 +152,6 @@
             <div class="center-align padding-top">
                 Back to Login? <a href="{% url 'main:login' %}">Login</a>
             </div>
-            
-
             
         </form>
         

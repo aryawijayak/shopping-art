@@ -8,8 +8,8 @@
         background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;
-        margin: 0;
-        padding: 0;
+        margin: 12px;
+        padding: 12px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -110,6 +110,14 @@
     margin: 0 auto; 
     }
 
+    .text-title{
+        font-size:28px;
+        font-weight: 600;
+        padding-bottom: 8px;
+        padding-top: 12px;
+        
+    }
+
 </style>
 
     <title > Login </title>
@@ -121,7 +129,7 @@
     
     <img src="https://user-images.githubusercontent.com/119391657/270732366-2e835f39-83cc-43de-b22b-df914ade0c93.png" alt="Logo" class="logo-image">
 
-    <h1>Login Shopping Art</h1>
+    <h1 class="text-title">Login Shopping Art</h1>
     
     <form method="POST" action="">
         {% csrf_token %}

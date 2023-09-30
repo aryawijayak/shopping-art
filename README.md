@@ -1,10 +1,45 @@
 # 🖼️ Shopping Art 🛒 🎨
 
+<style>
+        table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 20px;
+        background-color: #4162FF; 
 
-```
-Tempat Memamerkan karya-karya inspiratif 👨🏻‍🎨
-```
-# Tugas 2
+        margin-bottom: 20px
+    }
+
+    th {
+        border: 1px solid #ffffff;
+        padding: 16px; 
+        text-align: left;
+        color: #fff; 
+        font-size: 18px; 
+    }
+
+    td {
+        border: 1px solid #ffffff;
+        padding: 12px;
+        text-align: left;
+        background-color: #EEF4FB; 
+        color: #060a21; 
+        line-height: 150%;
+    }
+
+    td.description {
+        max-width: 400px; 
+        overflow-y: auto;
+    }
+
+</style>
+
+
+    Dalam era digital ini, seni sering diabaikan dan kurang dihargai. Website shopping art muncul sebagai solusi, memberikan seniman platform untuk memamerkan dan menjual karya mereka kepada audiens yang lebih luas, mengubah cara kita melihat dan menghargai seni dalam konteks digital 👨🏻‍🎨
+
+
+#  Tugas 2
+<details>
 
 ### 1. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step 
 
@@ -79,9 +114,14 @@ Meskipun memungkinkan untuk membuat aplikasi web berbasis Django tanpa menggunak
 | Controller: Menjembatani hubungan antara View dan Model dan sebagai inti logika dan alur aplikasi dengan menginformasi interaksi user ke Model | Template: Mengambil data dari model dan menampilkannya, berupa HTML  | ViewModel: Perantara antara Model dan View, mengubah data dari Model menjadi format sesuai dengan tampilan |
 |![mvc](https://user-images.githubusercontent.com/119391657/268604124-47902dbc-cc01-46af-b077-9ba64c31e042.png) |![mvp](https://user-images.githubusercontent.com/119391657/268604321-e031b08c-f41e-4e57-81e7-184fd9a8959b.png) |![mvvm](https://user-images.githubusercontent.com/119391657/268604466-b3808d32-e983-4b1e-a385-1c6ea8e8c89b.png) |
 | MVC merupakan konsep yang sering diterapkan dalam pengembangan perangkat lunak, terutama pada aplikasi desktop dan web konvensional. Prinsip ini memisahkan tiga komponen utama dari aplikasi dengan tujuan untuk meningkatkan kemudahan dalam merawat dan mengembangkan kode.| MVT merupakan pola desain yang khusus digunakan dalam kerangka kerja Django, yang diciptakan khusus untuk pengembangan aplikasi web menggunakan bahasa pemrograman Python. Pola ini menggantikan komponen View dalam MVC dengan yang disebut sebagai Template, yang bertujuan untuk memisahkan dengan lebih tegas antara aspek tampilan dan pemrosesan HTTP. | MVVM merupakan pola desain yang umum diterapkan dalam pengembangan aplikasi yang menekankan antarmuka pengguna (UI), terutama pada platform seperti WPF (Windows Presentation Foundation). Pola ini difokuskan pada konsep pemisahan antara komponen tampilan dan logika bisnis, dengan memanfaatkan ViewModel sebagai perantara di antara keduanya.|
+</details>
 
+<br>
+<br>
 
 # Tugas 3
+
+<details>
 
 ### 1. Apa perbedaan antara form POST dan form GET dalam Django?
 | Form POST         | Form GET         |
@@ -388,9 +428,13 @@ Pada akhirnya kita berhasil menambahkan fungsi tabel 🤩 pada website shopping 
 
 5. JSON (BY ID)
 ![JSON ID](https://user-images.githubusercontent.com/119391657/268959285-0bb6efa8-7f78-4c0e-a7e1-32eae7321d73.png)
+</details>
 
+<br>
+<br>
 
 # Tugas 4
+<details>
 
 ### 1. Apa itu Django UserCreationForm, dan jelaskan apa kelebihan dan kekurangannya?
 
@@ -421,8 +465,7 @@ Namun, ada beberapa kekurangan:
 Jadi, UserCreationForm adalah alat yang sangat berguna untuk membuat formulir pendaftaran pengguna dalam aplikasi web Django, meskipun Anda perlu mempertimbangkan apakah sesuai dengan kebutuhan dan desain aplikasi Anda sebelum menggunakannya.
 
 ### 2. Apa perbedaan antara autentikasi dan otorisasi dalam konteks Django, dan mengapa keduanya penting?
-| Aspek        | Autentifikasi        |Otorisasi        |
-| ---        | ---        |  ---        |
+- [x]
 | Definisi  | Autentikasi adalah proses verifikasi identitas pengguna, yaitu memastikan bahwa seseorang yang mencoba mengakses aplikasi adalah pengguna yang mereka klaim | Otorisasi adalah proses yang menentukan apa yang diizinkan atau tidak diizinkan oleh pengguna yang telah diautentikasi.
 |Tujuan | Autentikasi digunakan untuk memeriksa identitas pengguna, misalnya, apakah mereka adalah pengguna terdaftar atau tamu | Otorisasi mengendalikan akses pengguna ke berbagai bagian atau fungsi dalam aplikasi, memastikan hanya pengguna yang berwenang yang dapat mengakses sumber daya tertentu
 |Waktu Pelaksanaan |Autentikasi umumnya terjadi di awal sesi pengguna, ketika mereka mencoba masuk atau mengakses aplikasi Anda untuk pertama kalinya |
@@ -733,3 +776,901 @@ Penggunaan cookies aman atau tidak tergantung pada cara Anda mengimplementasikan
 
     Setelah menyelesaikan semua step step diatas, saatnya untuk add-commit push ke repositoi github kita. Caranya dengan pertama tama melakukan  add dengan command `git add .` setelah itu commit dengan `git commit -m " Selesai mengerjakan tugas 4"` dan terakhir mempushnya pada branch main dengan `git push -u origin main`
 
+</details>
+
+<br>
+<br>
+
+
+
+# Tugas 5
+
+<details>
+
+### 1.  Jelaskan manfaat dari setiap element selector dan kapan waktu yang tepat untuk menggunakannya.
+| Elemen Selector         | 
+| ---        |
+| `Elemen Selector `merupakan salah satu jenis selektor CSS yang digunakan untuk memilih elemen HTML berdasarkan jenis tagnya. Setiap jenis selektor CSS memiliki manfaat dan penggunaannya yang berbeda tergantung pada kebutuhan desain dan struktur HTML.|
+
+Berikut ini merupakan lebih jelas mengenai jenis element selector, manfaat, dan kapan waktu yang tepat untuk menggunakannya
+
+| Nama  |Manfaat | Waktu Penggunaan| 
+| ---   | ---  | ---   |
+|elektor Elemen (Tag)| Selektor ini digunakan untuk memilih semua elemen HTML yang sesuai dengan jenis tag tertentu. Ini adalah selektor yang paling umum dan memengaruhi semua elemen yang sesuai.|  Selektor elemen cocok digunakan ketika Anda ingin menerapkan gaya yang sama pada semua elemen dengan jenis tag yang sama. Misalnya, untuk mengatur gaya default untuk semua paragraf <p> atau judul level 1 `<h1>` di halaman web|
+|Selektor Universal (*) | Selektor ini memilih semua elemen dalam dokumen HTML. Ini sangat kuat dan dapat digunakan untuk mengatur gaya default atau menghapus margin/padding di seluruh halaman. | Harus digunakan dengan hati-hati karena dapat memengaruhi semua elemen dalam halaman. Sebaiknya digunakan untuk mengatur reset CSS atau gaya default di tingkat tinggi.
+|Selektor ID (#id)| Selektor ini digunakan untuk memilih elemen berdasarkan atribut `id` yang unik. Ini memungkinkan Anda menargetkan elemen tertentu secara spesifik. |Digunakan ketika Anda ingin mengatur gaya untuk elemen tunggal yang memiliki atribut `id` unik. Ini juga sangat berguna dalam konteks JavaScript ketika Anda perlu merujuk ke elemen tertentu.|
+|Selektor Kelas (.class)|Selektor ini digunakan untuk memilih elemen berdasarkan atribut `class`. Cocok digunakan untuk menerapkan gaya yang sama pada beberapa elemen.| Ketika Anda ingin menerapkan gaya yang sama pada beberapa elemen dengan atribut `class` yang sama atau saat Anda ingin menambahkan perilaku JavaScript ke elemen-elemen serupa.|
+|Selektor Atribut ([attribute])|Selektor ini memungkinkan Anda memilih elemen berdasarkan atribut HTML mereka, seperti `href`, `src`, atau atribut kustom.| Saat Anda ingin memilih elemen berdasarkan atribut tertentu. Contohnya, ketika Anda ingin mengatur gaya untuk semua tautan eksternal (`<a>` dengan `href` eksternal)
+
+### 2.  Jelaskan HTML5 Tag yang kamu ketahui.
+
+|No  |Tag    |Penjelasan |
+|---    |---    |---|
+|1  | `<html>`  |  Ini adalah elemen root yang digunakan untuk mengawali dan mengakhiri seluruh dokumen HTML.|
+|2|`<head>`|  Elemen ini digunakan untuk menyertakan informasi-informasi meta dan judul halaman web, serta menghubungkan dokumen dengan berkas-berkas eksternal seperti stylesheet dan skrip JavaScript.|
+|3| `<title>`| Tag ini digunakan untuk menentukan judul halaman web yang akan ditampilkan di bilah judul browser.|
+|4 | `<meta>` | Elemen ini digunakan untuk menyediakan informasi meta, seperti karakter encoding, deskripsi halaman, dan instruksi-instruksi lainnya kepada browser.|
+|5 |  `<link>` |Tag ini digunakan untuk menghubungkan dokumen HTML dengan berkas-berkas eksternal, seperti stylesheet CSS.|
+|6| `<style>:` | Elemen ini digunakan untuk menentukan gaya dan tampilan halaman web dengan menggunakan CSS (Cascading Style Sheets) secara internal.|
+|7| `<script>` | Ini digunakan untuk menyisipkan skrip JavaScript ke dalam halaman web. |
+|8 | `<body>` | Elemen ini berisi seluruh konten yang akan ditampilkan di halaman web, seperti teks, gambar, video, dan elemen-elemen lainnya. |
+|9 | `<div>` | Elemen ini digunakan untuk mengelompokkan dan mengatur konten dalam sebuah blok yang dapat diubah tampilannya menggunakan CSS.|
+| 10 | `<h1>`, `<h2>`, `<h3>`, `<h4>`, `<h5>`, `<h6>`|  Tag ini digunakan untuk menentukan tingkat kepentingan berbagai judul atau heading dalam halaman web, dengan `<h1>` sebagai yang paling besar dan utama dan `<h6>` sebagai yang paling kecil.|
+|11 | `<p>`| Digunakan untuk menampilkan paragraf teks.|
+|12| `<a>`| Tag ini digunakan untuk membuat tautan atau hyperlink ke halaman web atau berkas lain.|
+|13| `<img>`| Ini digunakan untuk menampilkan gambar di halaman web.|
+|14 | `<ul>`, `<ol>`, `<li>` | Digunakan untuk membuat daftar tak terurut (unordered list) dan daftar terurut (ordered list), serta elemen-elemen dalam daftar tersebut |
+|15|  `<table>`, `<tr>`, `<th>`, `<td>`| Tag ini digunakan untuk membuat tabel dan elemen-elemen di dalamnya.|
+|16| `<form>`, `<input>`, `<textarea>`, `<button>` |Digunakan untuk membuat formulir dan elemen-elemen dalam formulir tersebut seperti kotak input, area teks, dan tombol submit.|
+|17| `<video>` dan `<audio>` | Digunakan untuk menyematkan video dan audio ke dalam halaman web.|
+|18 | `<canvas>` |Ini digunakan untuk menggambar grafis atau animasi menggunakan JavaScript.|
+|19| `<svg>` | Digunakan untuk menyisipkan grafik vektor dalam format SVG (Scalable Vector Graphics) ke dalam halaman web.|
+|20.| `<footer>`, `<header>`, `<nav>`, `<section>`, `<article>` |Tag ini digunakan untuk mengorganisir konten halaman web menjadi bagian-bagian yang lebih terstruktur, seperti header, footer, dan artikel.|
+
+### 3.  Jelaskan perbedaan antara margin dan padding.
+|Aspek   | Margin         | Padding         |
+|---    | ---        |    ----   |
+| Pengertian   | Margin mengacu pada kesenjangan antara batas dua elemen. | Padding mengacu pada ruang antara konten suatu elemen dan batasnya.	
+|Lokasi Ruang   | Ini berkaitan dengan celah ruang di luar elemen. |Ini berkaitan dengan kesenjangan ruang yang ada dalam suatu elemen.	
+|Elemen Penataan| Elemen gaya internal seperti warna latar belakang tidak memengaruhi margin | Elemen gaya internal apa pun memengaruhi padding seperti warna latar belakang|
+|Pengaturan Optimasi | Margin dapat diotomatisasi. | Otomatisasi tidak tersedia untuk padding.|
+|Nilai Numerik | Namun bilangan bulat adalah nilai numerik margin. | Bilangan real positif hanya memenuhi syarat untuk nilai padding|
+|Nilai Ukuran | Nilai margin menggunakan properti invers dimana penurunan nilai akan meningkatkan garis margin dan sebaliknya.| Nilai padding digunakan untuk mengontrol ukuran elemen.	|
+
+
+### 4.  Jelaskan perbedaan antara framework CSS Tailwind dan Bootstrap. Kapan sebaiknya kita menggunakan Bootstrap daripada Tailwind, dan sebaliknya?
+Aspek   | CSS Tailwind         | Bootstrap         |
+|---    | ---        |    ----   |
+| Design    | Tailwind menganut pendekatan yang lebih "utility-first", di mana kita membangun antarmuka dengan menggabungkan class utilitas yang lebih kecil. Ini memberikan kebebasan kreatif yang lebih besar dan memungkinkan penggunaan class yang sangat spesifik.| Bootstrap menawarkan set class CSS dan komponen yang telah dirancang sebelumnya dengan tampilan yang cukup terstruktur dan konsisten. Ini cocok untuk proyek dengan desain tradisional yang membutuhkan kerangka kerja yang stabil dan mudah digunakan.|
+| Fleksibilitas | Tailwind memberikan fleksibilitas yang lebih besar dengan pendekatan "utility-first" yang memungkinkan kita membangun desain yang sangat kustom sesuai kebutuhan. kita memiliki kendali penuh atas gaya dan tata letak dengan kombinasi class utilitas yang spesifik. | Bootstrap menawarkan kerangka kerja yang relatif terstruktur dengan banyak komponen yang telah dirancang sebelumnya. Ini memberikan stabilitas dan kemudahan penggunaan, tetapi mungkin memiliki batasan dalam hal fleksibilitas desain yang unik. |
+| Ukuran File | Tailwind dirancang untuk lebih ringan dalam hal ukuran file. Namun, ketika kita menggunakan banyak class utilitas dalam kode, ukuran file CSS dapat meningkat. | Bootstrap adalah kerangka kerja yang lebih besar dalam hal ukuran file karena menyediakan banyak fitur dan komponen yang siap pakai. Ini mungkin berdampak pada kecepatan pengunduhan dan performa halaman web.|
+|Ekosistem Pengembangan| Tailwind juga memiliki ekosistem yang berkembang pesat dengan dokumentasi yang baik dan komunitas yang aktif, kita dapat menemukan banyak sumber daya, plugin, dan integrasi dengan kerangka kerja JavaScript seperti React atau Vue. | Bootstrap memiliki ekosistem yang sangat kuat dengan dokumentasi yang kaya, banyak tema dan template yang tersedia, serta dukungan komunitas yang luas. Ini membuatnya mudah untuk memulai dan mendapatkan sumber daya yang diperlukan.
+
+
+### 5.  Checklist Tugas
+
+- [x]Kustomisasi desain pada templat HTML yang telah dibuat pada Tugas 4 dengan menggunakan CSS atau CSS framework (seperti Bootstrap, Tailwind, Bulma) dengan ketentuan sebagai berikut
+
+    Pertama tama untuk mengkostumisasi desain pada HTML, perlu menambahkan link CSS framework dalam case ini adalah Bootstrap dan Java Scriptke dalam `templates/base.html` dan menambahkan tag `<meta name="viewport">` . Untuk menambahkannya bisa dengan menambahkan:
+    ```
+    <head>
+        {% block meta %}
+            ...
+        {% endblock meta %}
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+
+    </head>
+    
+    ```
+    Kita menambahkannya pada `base.html` dikarenakan pada file tersebut akan digunakan sebagai tempalte dasar html yang berguna untuk template lainnya.
+
+- [x] Menambahkan Fitur Edit dan Delete Pada Aplikasi
+    Untuk mengedit dan menghapus list pada tabel.
+
+    Untuk membuat Edit, pertama tama kita membuka file `views.py` yang ada pada subdirektori main. Menambahkan views.py berguna untuk menambahkan fungsi yang nantinya akan berguna untuk mengedit produk kita pada shopping art. dan buatlah fungsi baru bernama `edit_product` yang menerima parameter request dan id. Tambahkan `views.py` dengan kode berikut
+
+    ```
+    def edit_product(request, id):
+    # Get product berdasarkan ID
+    product = Product.objects.get(pk = id)
+
+    # Set product sebagai instance dari form
+    form = ProductForm(request.POST or None, instance=product)
+
+    if form.is_valid() and request.method == "POST":
+        # Simpan form dan kembali ke halaman awal
+        form.save()
+        return HttpResponseRedirect(reverse('main:show_main'))
+
+    context = {'form': form}
+    return render(request, "edit_product.html", context)
+    
+    ```
+
+    Setelah membuat fungsi, selanjutnya kita harus membuat HTML untuk mengedit productnya. Untuk membuat HTML untuk edit pertama tama buat file baru pada folder `main/templates` dengan nama `edit_product.html ` yang berisi :
+    ```
+    {% extends 'base.html' %}
+
+    {% load static %}
+
+    {% block content %}
+
+    <h1>Edit Product</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="Edit Product"/>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    {% endblock %}
+    ```
+
+
+    Setelah membuat Fungsi, buat masukan juga fungsi tersebut pada `urls.py` agar dapat dipanggil pada `main.html`. tambahkan dengan cara berikut: 
+    ```
+    from main.views import edit_product
+    ```
+    Lalu setelah mengimport tambahkan url ke `urlpatterns` dengan cara berikut:
+
+    ```
+    ...
+    path('edit-product/<int:id>', edit_product, name='edit_product'),
+    ...
+    ```
+
+    Panggil edit product yang sudah dibuat diatas dan delete product (Pada tugas sebelumnya sudah dibuat) pada `main.html` dengan menggunakan berikut ini:
+
+    ```
+    <td class="action-row"> 
+        <div class="action-buttons ">
+            <a href="{% url 'main:edit_product' product.pk %}" class="add-product-button">
+                    Edit
+
+            <a href="{% url 'main:remove_product' product.id %}" class="add-product-button svg-button">
+                <img src="https://svgur.com/i/xtJ.svg" alt="SVG Image">
+            </a>
+
+        </div>
+    </td>
+    ```
+
+- [x]Kustomisasi halaman login, register, dan tambah inventori semenarik mungkin.
+
+    Untuk mengkostumisasi halaman login, register dan tambah product saya menggunakan inline css dengan memanggil `<style>` pada bagian atas html serta dipadukan dengan framework bootstrap. Saya menggunakan inline CSS karena menurut saya ini yang mudah disetup dan digunakan untuk pemula.
+    <br>
+
+    ### Pada halaman login, berikut inline CSS yang saya tambahkan
+    <details>
+    <summary>
+    Style Login
+    </summary>
+
+    ```
+    <style>
+        body {
+            background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/089d21ad-7782-4104-89c2-a65435feaa61/d9dbds5-953028f0-861a-4db8-9b6f-91162fe1959d.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzA4OWQyMWFkLTc3ODItNDEwNC04OWMyLWE2NTQzNWZlYWE2MVwvZDlkYmRzNS05NTMwMjhmMC04NjFhLTRkYjgtOWI2Zi05MTE2MmZlMTk1OWQuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.V4cjYqRZbpYo5gZ_cXGMswU-GI-vp3KNKuVhEjE6Clw'); /* Gantilah 'path-to-your-image' dengan path ke gambar GIF Anda */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin: 12px;
+            padding: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            position: relative; 
+        }
+
+        .login-card h1,
+        .login-card label,
+        .login-card a {
+            font-family: 'Poppins', sans-serif;
+            color: rgb(19, 10, 54);
+        }
+
+        .login-card a {
+            font-family: 'Poppins', sans-serif;
+            color: #4162FF;
+            text-decoration: underline; 
+        }
+
+        .login-black{
+            font-family: 'Poppins', sans-serif;
+            color:rgb(19, 10, 54);
+        }
+
+        .login-card {
+            text-align: center;
+            background-color: #ffffffa9;
+            border-radius: 32px;
+            padding: 30px;
+            width: 400px;
+            text-align: center;
+            padding-top: 50px;
+            backdrop-filter: blur(6px);
+            border: 2px solid rgba(255, 255, 255, 0.439); 
+        }
+
+        .login-card h1 {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .login-card form {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .login-card input[type="text"],
+        .login-card input[type="password"] {
+            font-family: 'Poppins', sans-serif;
+            color: black; 
+            background-color: white;
+        }
+
+        .login-card .form-group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 24px;
+        }
+
+        .login-card .form-group label {
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 8px;
+            text-align: left; 
+        }
+
+        .login-card .form-control {
+        font-family: 'Poppins', sans-serif;
+        width: 100%;
+        padding: 12px; 
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        box-sizing: border-box;
+        margin-bottom: 12px;
+        font-size: 16px; 
+        background-color: white;
+        }
+
+
+        .login-card .add-product-button {
+            font-size: 16px;
+            display: inline-flex;
+            height: 56px;
+            padding: 8px 48px;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+            border-radius: 16px;
+            background: var(--primary-blue, #4162FF);
+            color: #ffffff;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .logo-image {
+        max-width: 100px; 
+        height: auto; 
+        display: block; 
+        margin: 0 auto; 
+        }
+
+        .text-title{
+            font-size:28px;
+            font-weight: 600;
+            padding-bottom: 8px;
+            padding-top: 12px;
+            
+        }
+
+    </style>
+    ```
+    </details>
+
+    <br>
+
+    ### Pada halaman Register, berikut inline CSS yang saya tambahkan
+
+    <details>
+    <summary>
+    Style Register
+    </summary>
+
+    ```
+    <style>
+        body {
+            background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/089d21ad-7782-4104-89c2-a65435feaa61/d9dbds5-953028f0-861a-4db8-9b6f-91162fe1959d.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzA4OWQyMWFkLTc3ODItNDEwNC04OWMyLWE2NTQzNWZlYWE2MVwvZDlkYmRzNS05NTMwMjhmMC04NjFhLTRkYjgtOWI2Zi05MTE2MmZlMTk1OWQuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.V4cjYqRZbpYo5gZ_cXGMswU-GI-vp3KNKuVhEjE6Clw'); /* Gantilah 'path-to-your-image' dengan path ke gambar GIF Anda */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            position: relative; 
+        }
+
+        .login-card h1,
+        .login-card label,
+        .login-card a {
+            font-family: 'Poppins', sans-serif;
+            color: rgb(19, 10, 54);
+        }
+
+        .login-card a {
+            font-family: 'Poppins', sans-serif;
+            color: #4162FF;
+            text-decoration: underline; 
+        }
+
+        .text-titile{
+            font-size: 32px;
+        }
+
+        .register-card {
+            text-align: center;
+            background-color: #ffffffbb;
+            border-radius: 32px;
+            padding: 30px;
+            width: 400px;
+            text-align: left;
+            padding-top: 50px;
+            backdrop-filter: blur(6px);
+            border: 2px solid rgba(255, 255, 255, 0.439); 
+        }
+
+        .register-card h1 {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .register-card form {
+            font-family: 'Poppins', sans-serif;
+            margin-top: 20px; 
+        }
+
+        .register-card input[type="text"],
+        .register-card input[type="password"] {
+            font-family: 'Poppins', sans-serif;
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        .register-card .form-group {
+            margin-bottom: 24px;
+        }
+
+        .register-card .form-group label {
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 8px;
+            text-align: left;
+            display: block; 
+        }
+
+        .register-card .add-product-button {
+            font-size: 18px;
+            display: inline-flex;
+            height: 56px;
+            padding: 8px 48px;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+            border-radius: 16px;
+            background: var(--primary-blue, #4162FF);
+            color: #fff;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .logo-image {
+            max-width: 100px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .left-align {
+        text-align: left;
+        }
+
+        .center-align {
+        text-align: center;
+        }
+
+    .password{
+            text-align: center;
+        }
+        .padding-top{
+            padding-top: 20px;
+        }
+        
+    </style>
+    ```
+    </details>
+
+    <br>
+
+    ### Pada halaman Tambah Inventori, berikut inline CSS yang saya tambahkan
+
+    <details>
+    <summary>
+    Style Tambah Inventori
+    </summary>
+
+    ```
+    <style>
+        body {
+            background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/089d21ad-7782-4104-89c2-a65435feaa61/d9dbds5-953028f0-861a-4db8-9b6f-91162fe1959d.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzA4OWQyMWFkLTc3ODItNDEwNC04OWMyLWE2NTQzNWZlYWE2MVwvZDlkYmRzNS05NTMwMjhmMC04NjFhLTRkYjgtOWI2Zi05MTE2MmZlMTk1OWQuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.V4cjYqRZbpYo5gZ_cXGMswU-GI-vp3KNKuVhEjE6Clw'); /* Gantilah 'path-to-your-image' dengan path ke gambar GIF Anda */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            position: relative; 
+        }
+
+        .login-card h1,
+        .login-card label,
+        .login-card a {
+            font-family: 'Poppins', sans-serif;
+            color: rgb(19, 10, 54);
+        }
+
+        .login-card a {
+            font-family: 'Poppins', sans-serif;
+            color: #4162FF;
+            text-decoration: underline; 
+        }
+
+        .text-titile{
+            font-size: 32px;
+        }
+
+        .register-card {
+            text-align: center;
+            background-color: #ffffffbb;
+            border-radius: 32px;
+            padding: 30px;
+            width: 400px;
+            text-align: left;
+            padding-top: 50px;
+            backdrop-filter: blur(6px);
+            border: 2px solid rgba(255, 255, 255, 0.439); 
+        }
+
+        .register-card h1 {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .register-card form {
+            font-family: 'Poppins', sans-serif;
+            margin-top: 20px; 
+        }
+
+        .register-card input[type="text"],
+        .register-card input[type="password"] {
+            font-family: 'Poppins', sans-serif;
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        .register-card .form-group {
+            margin-bottom: 24px;
+        }
+
+        .register-card .form-group label {
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 8px;
+            text-align: left;
+            display: block; 
+        }
+
+        .register-card .add-product-button {
+            font-size: 18px;
+            display: inline-flex;
+            height: 56px;
+            padding: 8px 48px;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+            border-radius: 16px;
+            background: var(--primary-blue, #4162FF);
+            color: #fff;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .logo-image {
+            max-width: 100px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .left-align {
+        text-align: left;
+        }
+
+        .center-align {
+        text-align: center;
+        }
+
+    .password{
+            text-align: center;
+        }
+        .padding-top{
+            padding-top: 20px;
+        }
+        
+    </style>
+    ```
+    </details>
+
+    <br>
+    <br>
+
+- [x] Kustomisasi halaman daftar inventori menjadi lebih berwarna maupun menggunakan apporach lain seperti menggunakan Card.
+
+    Untuk mengkostumisasi halaman daftar inventori menjadi berwarna saya sama seperti halaman sebelumnya menggunakan inline CSS dengan menambahkan `<style>` Untuk mengkostumisasi daftar inventori maka menambahkan code style berikut
+
+    <details>
+
+    <summary>
+    Style Main
+    <summary>
+
+        ```
+        <style>
+
+            body {
+                background-color: #f4f7ff;
+                margin: 12px;
+            }
+
+            h1, h2, h3, h4, h5, p, th, td, a, button {
+                font-family: 'Poppins', sans-serif;
+            }
+            
+            .navbar{
+            position: sticky;
+            top: 0;
+            padding: 16px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            margin-bottom: 20px;
+            background-color: rgba(255, 255, 255, 0.5);
+            }
+
+            .navbar img {
+                max-height: 28px;
+                padding-right: 20px;
+                
+            }
+
+            .navbar-brand {
+                color: #76797b;
+                font-weight: 500;
+                font-size: 16x;
+            }
+
+
+            .navbar .navbar-nav .nav-item {
+                margin-right: 10px; /* Mengatur jarak antar item */
+                padding-top: 3px;
+                padding-bottom: 3px;
+            }
+
+            .navbar .navbar-nav .nav-item-active{
+                background: #4161ff20; ;
+                border-radius: 99px; 
+                padding-left: 20px;
+                padding-right: 20px;
+                margin-left: 20px;
+                margin-right: 20px;
+                padding-top: 3px;
+                padding-bottom: 3px;
+                color: #4162FF;
+                font-weight: 600;
+            }
+            
+            .content-container {
+                display: flex;
+                flex-direction: column; 
+                align-items: center;
+                min-height: 0;
+                text-align: center;
+                margin-bottom: 5px;
+            }
+
+            .text-center {
+                text-align: center;
+                margin-bottom: 2px
+            }
+            
+            .banner {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 50px; 
+            }
+
+            table {
+                border-collapse: collapse;
+                width: 100%;
+                margin-top: 20px;
+                background-color: #4162FF; 
+                border-radius: 20px 20px 20px 20px; 
+                margin-bottom: 20px
+            }
+
+            table tr:last-child td {
+                background-color: #d7e3ef; 
+                color: #160323; 
+                font-weight: 500; 
+            }
+
+            th {
+                border: 1px solid #ffffff;
+                padding: 16px; 
+                text-align: left;
+                color: #fff; 
+                font-size: 18px; 
+            }
+
+            td {
+                border: 1px solid #ffffff;
+                padding: 12px;
+                text-align: left;
+                background-color: #EEF4FB; 
+                color: #060a21; 
+                line-height: 150%;
+            }
+
+            td.description {
+                max-width: 400px; 
+                overflow-y: auto;
+            }
+
+            .center-text {
+                text-align: center;
+            }
+
+            .card-container {
+                margin-top: 8px;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+                flex-wrap: nowrap; 
+                justify-content: flex-start; 
+                gap: 5px;
+                overflow-x: auto; 
+                justify-items: center; 
+                align-items: center;
+                justify-content: center;
+                margin: 28px;
+            }
+            .card {
+                background-color: #ffffff;
+                margin: 12px;
+                border-radius: 24px;
+                box-shadow: 0px 5px 10px rgba(0, 0, 0, 0);
+                display: flex; 
+                flex-direction: column; 
+                align-items: center; 
+                margin-bottom: 16px;
+                width:100%;
+                min-width: 420px;
+            }
+
+                @media (min-width: 768px) {
+                .card-container {
+                    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+                    justify-content: center;
+                }
+            }
+
+                @media (min-width: 1200px) {
+                .card-container {
+                    grid-template-columns: repeat(auto-fill, minmax(420px, 1fr)); 
+                    justify-content: center;
+                }
+            } 
+
+                @media (min-width: 2400px) {
+                    .card-container {
+                        grid-template-columns: repeat(auto-fill, minmax(420px, 1fr)); 
+                        justify-content: center;
+                    }
+                } 
+
+            .card img {
+                max-width: 100%;
+                border-radius: 24px;
+                height: auto;
+            }
+
+            .card-content {
+                padding: 10px; 
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .card-content h4 {
+                font-size: 18px;
+                margin: 5px 0; 
+            }
+
+            .card-content p {
+                font-size: 14px;
+                margin: 5px 0; 
+            }
+
+            
+            .card-grid {
+                display: flex;
+                flex-direction: row; 
+                flex-wrap: nowrap; 
+                justify-content: flex-start; 
+                gap: 20px; 
+                overflow-x: auto; 
+                white-space: nowrap; 
+            }
+
+            .add-product-button {
+                display: inline-flex;
+                height: 48px;
+                padding: 4px 16px;
+                justify-content: center;
+                align-items: center;
+                gap: 8px;
+                border-radius: 12px;
+                background: var(--primary-blue, #4162FF);
+                color: #fff;
+                text-decoration: none;
+                border: none;
+                cursor: pointer; 
+            }
+
+            .add-amount-button{
+                background: var(--primary-blue, #4161ff1f);
+                color:#4162FF;
+                padding: 20px 0px;
+                margin:4px;
+                border-radius: 1000px;
+            }
+
+            .logout-button {
+                background-color: #ff1d1d; 
+                width:96px
+            }
+
+            .action-buttons {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 8px;
+                width: 100%; 
+                
+            }
+
+            .action-buttons a {
+                width: 100%;
+            }
+
+            .svg-button {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 12px;
+                background-color: var(--primary-red, #ff1d1d);
+                color: #fff;
+                text-decoration: none;
+                border: none;
+                cursor: pointer;
+                height: 48px;
+                padding: 4px 16px;
+                min-width: 56px;
+            }
+
+            .color-gray{
+                color:#76797b;
+            }
+            
+            .action-gap{
+                padding: 12px;
+            }
+
+            @media (max-width: 768px) {
+                .card {
+                    width: calc(50% - 20px); 
+                }
+            }
+
+            @media (min-width: 769px) {
+                .card {
+                    width: calc(33.33% - 20px); 
+                }
+            }
+
+            .text-title{
+                font-weight: 700;
+                font-size: 28px;
+            }
+
+            .text-title-semi{
+                font-weight: 600;
+                font-size:28px;
+            }
+
+            .amount-img {
+                max-height: 28px;
+                max-width: 28px;
+                
+            }
+
+        </style>
+        ```
+    </details>
+    Selain itu saya juga menambahkan inventori menjadi card diatas tabel dengan menggunakan kode berikut:
+
+        <div class="card-container">
+            {% for product in products %}
+            <div class="card border-0" style="padding: 10px;  padding-bottom: 30px;" >
+                <img class="card-img" src={{product.image_url}} alt="Product Image">
+                <h3 style="margin: 20px 0px; font-size: 24px; font-weight: 700;" >{{product.name}}</h4>
+                <p style="margin: 0px 8px; font-size:16px; font-weight: 500" >By: {{product.artist}}</p>
+            </div>
+            {% endfor %}
+        </div>
+
+    Untuk membuat card pertama tama panggil kelas `card-container` yang sudah dibuat di style CSS yang berguna agar grid dari card menjadi rapi, selanjutnya memanggil `{% for product in products %}` yang dimana konten dari card akan menjadi dinamis sesuai dengan input dari `create_product`. Setelah itu untuk mendapatkan gambarnya dapat diambil dari source : `src={{product.image_url}}`, untuk namanya bisa dengan `{{product.name}}` dan terakhit untuk menambahkan artist atau pembuat dari gambar tersebut tambahkan `{{product.artist}}`. Setelah itu semua card akan menjadi dinamis menyesuaikan konten dari isi tabel.
+
+    Untuk menambahkan gambar pada card saya memodifikasi file `forms.py` dengan menambahkan input `image_url` seperti berikut ini:
+
+    ```
+    class ProductForm(ModelForm):
+    class Meta:
+        model = Product
+        fields = ["name", "artist", "price","description", "image_url"]
+    ```
+    
+- [x] Memberikan warna yang berbeda (teks atau background) pada baris terakhir dari item pada inventori anda menggunakan CSS.
+
+    Untuk menambahkan penanda berbeda di akhir tabel, saya menambahkan CSS untuk last child pada `tr` dengan kode berikut:
+    ```
+    table tr:last-child td {
+        background-color: #d7e3ef; 
+        color: #160323; 
+        font-weight: 500; 
+    }
+    ```
+
+    </details>
