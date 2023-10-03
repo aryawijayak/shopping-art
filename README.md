@@ -1302,11 +1302,9 @@ Aspek   | CSS Tailwind         | Bootstrap         |
     Untuk mengkostumisasi halaman daftar inventori menjadi berwarna saya sama seperti halaman sebelumnya menggunakan inline CSS dengan menambahkan `<style>` Untuk mengkostumisasi daftar inventori maka menambahkan code style berikut
 
     <details>
-
     <summary>
     Style Main
     <summary>
-
         ```
         <style>
 
@@ -1599,7 +1597,9 @@ Aspek   | CSS Tailwind         | Bootstrap         |
 
         </style>
         ```
+
     </details>
+
     Selain itu saya juga menambahkan inventori menjadi card diatas tabel dengan menggunakan kode berikut:
 
         <div class="card-container">
