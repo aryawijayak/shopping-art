@@ -1299,6 +1299,7 @@ Aspek   | CSS Tailwind         | Bootstrap         |
 
 - [x] Kustomisasi halaman daftar inventori menjadi lebih berwarna maupun menggunakan apporach lain seperti menggunakan Card.
 
+<<<<<<< HEAD
     Untuk mengkostumisasi halaman daftar inventori menjadi berwarna saya sama seperti halaman sebelumnya menggunakan inline CSS dengan menambahkan `<style>` Untuk mengkostumisasi daftar inventori maka menambahkan code style berikut
 
     <details>
@@ -1306,13 +1307,17 @@ Aspek   | CSS Tailwind         | Bootstrap         |
     Style Main
     <summary>
         ```
+=======
+    Untuk mengkostumisasi halaman daftar inventori menjadi berwarna saya sama seperti halaman sebelumnya menggunakan inline CSS dengan menambahkan `<style>` Untuk mengkostumisasi daftar inventori maka menambahkan code style berikut    
+       
+>>>>>>> 166d3e495ac3e1126517b340c16ad67f4116b3e2
         <style>
-
+    
             body {
                 background-color: #f4f7ff;
                 margin: 12px;
             }
-
+    
             h1, h2, h3, h4, h5, p, th, td, a, button {
                 font-family: 'Poppins', sans-serif;
             }
@@ -1328,26 +1333,26 @@ Aspek   | CSS Tailwind         | Bootstrap         |
             margin-bottom: 20px;
             background-color: rgba(255, 255, 255, 0.5);
             }
-
+    
             .navbar img {
                 max-height: 28px;
                 padding-right: 20px;
                 
             }
-
+    
             .navbar-brand {
                 color: #76797b;
                 font-weight: 500;
                 font-size: 16x;
             }
-
-
+    
+    
             .navbar .navbar-nav .nav-item {
                 margin-right: 10px; /* Mengatur jarak antar item */
                 padding-top: 3px;
                 padding-bottom: 3px;
             }
-
+    
             .navbar .navbar-nav .nav-item-active{
                 background: #4161ff20; ;
                 border-radius: 99px; 
@@ -1369,7 +1374,7 @@ Aspek   | CSS Tailwind         | Bootstrap         |
                 text-align: center;
                 margin-bottom: 5px;
             }
-
+    
             .text-center {
                 text-align: center;
                 margin-bottom: 2px
@@ -1380,7 +1385,7 @@ Aspek   | CSS Tailwind         | Bootstrap         |
             height: auto;
             margin-bottom: 50px; 
             }
-
+    
             table {
                 border-collapse: collapse;
                 width: 100%;
@@ -1389,13 +1394,13 @@ Aspek   | CSS Tailwind         | Bootstrap         |
                 border-radius: 20px 20px 20px 20px; 
                 margin-bottom: 20px
             }
-
+    
             table tr:last-child td {
                 background-color: #d7e3ef; 
                 color: #160323; 
                 font-weight: 500; 
             }
-
+    
             th {
                 border: 1px solid #ffffff;
                 padding: 16px; 
@@ -1403,7 +1408,7 @@ Aspek   | CSS Tailwind         | Bootstrap         |
                 color: #fff; 
                 font-size: 18px; 
             }
-
+    
             td {
                 border: 1px solid #ffffff;
                 padding: 12px;
@@ -1412,16 +1417,16 @@ Aspek   | CSS Tailwind         | Bootstrap         |
                 color: #060a21; 
                 line-height: 150%;
             }
-
+    
             td.description {
                 max-width: 400px; 
                 overflow-y: auto;
             }
-
+    
             .center-text {
                 text-align: center;
             }
-
+    
             .card-container {
                 margin-top: 8px;
                 display: grid;
@@ -1447,51 +1452,51 @@ Aspek   | CSS Tailwind         | Bootstrap         |
                 width:100%;
                 min-width: 420px;
             }
-
+    
                 @media (min-width: 768px) {
                 .card-container {
                     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
                     justify-content: center;
                 }
             }
-
+    
                 @media (min-width: 1200px) {
                 .card-container {
                     grid-template-columns: repeat(auto-fill, minmax(420px, 1fr)); 
                     justify-content: center;
                 }
             } 
-
+    
                 @media (min-width: 2400px) {
                     .card-container {
                         grid-template-columns: repeat(auto-fill, minmax(420px, 1fr)); 
                         justify-content: center;
                     }
                 } 
-
+    
             .card img {
                 max-width: 100%;
                 border-radius: 24px;
                 height: auto;
             }
-
+    
             .card-content {
                 padding: 10px; 
                 display: flex;
                 flex-direction: column;
                 align-items: center;
             }
-
+    
             .card-content h4 {
                 font-size: 18px;
                 margin: 5px 0; 
             }
-
+    
             .card-content p {
                 font-size: 14px;
                 margin: 5px 0; 
             }
-
+    
             
             .card-grid {
                 display: flex;
@@ -1502,7 +1507,7 @@ Aspek   | CSS Tailwind         | Bootstrap         |
                 overflow-x: auto; 
                 white-space: nowrap; 
             }
-
+    
             .add-product-button {
                 display: inline-flex;
                 height: 48px;
@@ -1517,7 +1522,7 @@ Aspek   | CSS Tailwind         | Bootstrap         |
                 border: none;
                 cursor: pointer; 
             }
-
+    
             .add-amount-button{
                 background: var(--primary-blue, #4161ff1f);
                 color:#4162FF;
@@ -1525,12 +1530,12 @@ Aspek   | CSS Tailwind         | Bootstrap         |
                 margin:4px;
                 border-radius: 1000px;
             }
-
+    
             .logout-button {
                 background-color: #ff1d1d; 
                 width:96px
             }
-
+    
             .action-buttons {
                 display: flex;
                 justify-content: center;
@@ -1539,11 +1544,11 @@ Aspek   | CSS Tailwind         | Bootstrap         |
                 width: 100%; 
                 
             }
-
+    
             .action-buttons a {
                 width: 100%;
             }
-
+    
             .svg-button {
                 display: flex;
                 justify-content: center;
@@ -1558,7 +1563,7 @@ Aspek   | CSS Tailwind         | Bootstrap         |
                 padding: 4px 16px;
                 min-width: 56px;
             }
-
+    
             .color-gray{
                 color:#76797b;
             }
@@ -1566,40 +1571,46 @@ Aspek   | CSS Tailwind         | Bootstrap         |
             .action-gap{
                 padding: 12px;
             }
-
+    
             @media (max-width: 768px) {
                 .card {
                     width: calc(50% - 20px); 
                 }
             }
-
+    
             @media (min-width: 769px) {
                 .card {
                     width: calc(33.33% - 20px); 
                 }
             }
-
+    
             .text-title{
                 font-weight: 700;
                 font-size: 28px;
             }
-
+    
             .text-title-semi{
                 font-weight: 600;
                 font-size:28px;
             }
-
+    
             .amount-img {
                 max-height: 28px;
                 max-width: 28px;
                 
             }
+<<<<<<< HEAD
 
         </style>
         ```
 
     </details>
 
+=======
+    
+            </style>
+    
+>>>>>>> 166d3e495ac3e1126517b340c16ad67f4116b3e2
     Selain itu saya juga menambahkan inventori menjadi card diatas tabel dengan menggunakan kode berikut:
 
         <div class="card-container">
