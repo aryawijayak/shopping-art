@@ -1599,18 +1599,12 @@ Aspek   | CSS Tailwind         | Bootstrap         |
                 max-width: 28px;
                 
             }
-<<<<<<< HEAD
 
         </style>
         ```
-
     </details>
 
-=======
-    
-            </style>
-    
->>>>>>> 166d3e495ac3e1126517b340c16ad67f4116b3e2
+
     Selain itu saya juga menambahkan inventori menjadi card diatas tabel dengan menggunakan kode berikut:
 
         <div class="card-container">
