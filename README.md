@@ -746,7 +746,7 @@ Penggunaan cookies aman atau tidak tergantung pada cara Anda mengimplementasikan
 
 # Tugas 5
 
-<details>
+
 
 ### 1.  Jelaskan manfaat dari setiap element selector dan kapan waktu yang tepat untuk menggunakannya.
 | Elemen Selector         | 
@@ -1631,4 +1631,4 @@ Aspek   | CSS Tailwind         | Bootstrap         |
     }
     ```
 
-</details>
+
