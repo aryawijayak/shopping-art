@@ -1299,18 +1299,9 @@ Aspek   | CSS Tailwind         | Bootstrap         |
 
 - [x] Kustomisasi halaman daftar inventori menjadi lebih berwarna maupun menggunakan apporach lain seperti menggunakan Card.
 
-<<<<<<< HEAD
     Untuk mengkostumisasi halaman daftar inventori menjadi berwarna saya sama seperti halaman sebelumnya menggunakan inline CSS dengan menambahkan `<style>` Untuk mengkostumisasi daftar inventori maka menambahkan code style berikut
-
-    <details>
-    <summary>
-    Style Main
-    <summary>
+    
         ```
-=======
-    Untuk mengkostumisasi halaman daftar inventori menjadi berwarna saya sama seperti halaman sebelumnya menggunakan inline CSS dengan menambahkan `<style>` Untuk mengkostumisasi daftar inventori maka menambahkan code style berikut    
-       
->>>>>>> 166d3e495ac3e1126517b340c16ad67f4116b3e2
         <style>
     
             body {
@@ -1601,6 +1592,7 @@ Aspek   | CSS Tailwind         | Bootstrap         |
             }
 
         </style>
+
         ```
     </details>
 
