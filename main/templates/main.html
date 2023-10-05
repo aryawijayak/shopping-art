@@ -1,9 +1,8 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+<!-- CSS------------------------------------------------------------------- -->
     <style>
-
         body {
             background-color: #f4f7ff;
             margin: 12px;
@@ -189,6 +188,10 @@
             margin: 5px 0; 
         }
 
+        .card:hover {
+            transform: scale(1.04);
+            transition: transform 0.24s ease;
+        }
         
         .card-grid {
             display: flex;
@@ -215,12 +218,24 @@
             cursor: pointer; 
         }
 
+        .add-card-button {
+            font-size: 18px;
+            font-weight: 600;
+            margin-top: 10px;
+            width: 300px;
+            height: 56px;
+            border-radius: 20px;
+            background: var(--primary-blue, #4161ff1f);
+            color:#4162FF;
+        }
+
         .add-amount-button{
             background: var(--primary-blue, #4161ff1f);
             color:#4162FF;
             padding: 20px 0px;
             margin:4px;
             border-radius: 1000px;
+            width: 100%;
         }
 
         .logout-button {
@@ -291,10 +306,9 @@
             max-width: 28px;
             
         }
-
     </style>
     
-
+<!-- NAVBAR------------------------------------------------------------------- -->
 <div class="navbar navbar-expand-lg bg-white">
     <div class="container-fluid">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -314,7 +328,7 @@
                 </li>
             </ul>
         </div>
-        <a class="nav-link" style="color: #4162FF; font-weight: 600; padding-right: 20px;" href="{% url 'main:create_product' %}">Make Product</a>
+        <a class="nav-link" type="button"  data-bs-target="#exampleModal" data-bs-toggle="modal" style="color: #4162FF; font-weight: 600; padding-right: 20px;" >Make Product by Ajax</a>
 
         <div class="ml-auto"> 
             <div class="nav-item dropdown">
@@ -330,83 +344,214 @@
     </div>
 </div>
 
+<!-- Banner------------------------------------------------------------------- -->
 <div class="content-container">
     <img class="banner" alt="Banner " src="https://user-images.githubusercontent.com/119391657/270735230-a8b5cf60-8116-418d-b8f9-abb976d4bc01.png" loading="lazy">
     <h1 class="text-title">🖼️ 👨🏻‍🎨 List of Art 🎨 🔥</h1>
-
 </div>
 
+<!-- Card ------------------------------------------------------------------- -->
+    <div id="product_card" class="card-container"></div>
 
-    <div class="card-container">
-        {% for product in products %}
-        <div class="card border-0" style="padding: 10px;  padding-bottom: 30px;" >
-            <img class="card-img" src={{product.image_url}} alt="Product Image">
-            <h3 style="margin: 20px 0px; font-size: 24px; font-weight: 700;" >{{product.name}}</h4>
-            <p style="margin: 0px 8px; font-size:16px; font-weight: 500" >By: {{product.artist}}</p>
-        </div>
-        {% endfor %}
-    </div>
-
+<!-- Total Karya------------------------------------------------------------------- -->
     <div class="text-center">
         <h2 class="total text-title-semi" style="padding-top: 28px; padding-bottom: 12px;">Anda telah membuat karya sebanyak: {{total}} karya 🎨🖼️</h2>
     </div>
+    <table id="product_table"></table>
 
-    <table>
-        <tr>
-            <th>Name</th>
-            <th>Price</th>
-            <th>Description</th>
-            <th>Date Added</th>
-            <th>Amount</th>
-            <th>Actions</th>
-        </tr>
-    
-        {% for product in products %}
-            <tr>
-                <td>{{ product.name }}</td>
-                <td class="center-text" > ${{ product.price }}</td>
-                <td class="description" >{{ product.description }}</td>
-                <td class="center-text" >{{ product.date_added }}</td>
-                <td class="center-text action-row" >
-                    <div class = "action-buttons ">
-                        <a href="{% url 'main:decrease_product_amount' product.id 1 %}" class="add-product-button add-amount-button">
-                            <img class="amount-img" src="https://user-images.githubusercontent.com/119391657/271369281-5bed9a9f-af4f-4278-b7ef-d9bb22694678.png" >
-                        </a>
-
-                        {{ product.amount }}
-
-                        <a href="{% url 'main:increase_product_amount' product.id 1 %}" class="add-product-button add-amount-button">
-                            <img class="amount-img" src="https://user-images.githubusercontent.com/119391657/271369291-047353e6-0659-40b5-8032-225335c346b1.png">
-                              
-                        </a>
-
-                    </div>
-                    
-                </td>
-                <td class="action-row"> 
-                    <div class="action-buttons ">
-                        <a href="{% url 'main:edit_product' product.pk %}" class="add-product-button">
-                                Edit
-
-                        <a href="{% url 'main:remove_product' product.id %}" class="add-product-button svg-button">
-                            <img src="https://svgur.com/i/xtJ.svg" alt="SVG Image">
-                        </a>
-
-                    </div>
-                </td>
-            </tr>
-        {% endfor %}
-    </table>
-    <br />
-    
+<!-- Sesi Login------------------------------------------------------------------- -->
     <h4>Sesi terakhir login: {{ last_login }} </h4>
 
+<!-- Button Logout, Create Product ------------------------------------------------------------------- -->
     <a href="{% url 'main:logout' %}" class=" add-product-button logout-button">
         Logout
     </a>
 
     <a href="{% url 'main:create_product' %}" class="add-product-button ">
-        Add New Product
+        Add New Product Biasa
     </a>
+
+<!-- Modal------------------------------------------------------------------- -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Product</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="form" onsubmit="return false;">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="name" class="col-form-label">Name:</label>
+                        <input type="text" class="form-control" id="name" name="name"></input>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="name" class="col-form-label">Artist:</label>
+                        <input type="text" class="form-control" id="artist" name="artist"></input>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="price" class="col-form-label">Price:</label>
+                        <input type="number" class="form-control" id="price" name="price"></input>
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="col-form-label">Description:</label>
+                        <textarea class="form-control" id="description" name="description"></textarea>
+                    </div>
+                    <div class="mb-4">
+                        <label for="image_url" class="col-form-label">Image Url:</label>
+                        <textarea class="form-control" id="image_url" name="image_url"></textarea>
+                    </div>
+                    <div class="mb-4">
+                        <label for="detail" class="col-form-label">Detail:</label>
+                        <textarea class="form-control" id="detail" name="detail"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="button_add" data-bs-dismiss="modal">Add Product</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Java Script------------------------------------------------------------------- -->
+    <script>
+        // Get product pakai JSON ----------------------------------------------------
+        async function getProducts() {
+            return fetch("{% url 'main:get_product_json' %}").then((res) => res.json())
+        }
+
+        //TABLE -------------------------------------------------------------------------
+        async function refreshProducts() {
+            document.getElementById("product_table").innerHTML = ""
+            const products = await getProducts()
+            let htmlString = `<tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Description</th>
+                <th>Date Added</th>
+                <th> Amount </th>
+                <th> Action </th>
+            </tr>`
+
+        products.forEach((item) => {
+            htmlString += `<tr>
+                <td>${item.fields.name}</td>
+                <td>$${item.fields.price}</td>
+                <td class="description" style ="max-width: 400px; overflow-y: auto;">${item.fields.description}</td>
+                <td>${item.fields.date_added}</td>
+                <td class="center-text action-row">
+                    <div class="action-buttons">
+                        <div class="action-buttons">
+                            <button onclick="decreaseAmount(${item.pk})" class="add-product-button add-amount-button" style="padding: 20px 0px;">
+                                <img class="amount-img" src="https://user-images.githubusercontent.com/119391657/271369281-5bed9a9f-af4f-4278-b7ef-d9bb22694678.png">
+                            </button>
+
+                            <span id="amount-${item.pk}">${item.fields.amount}</span>
+
+                            <button onclick="increaseAmount(${item.pk})" class="add-product-button add-amount-button" style ="padding: 20px 0px;">
+                                <img class="amount-img" src="https://user-images.githubusercontent.com/119391657/271369291-047353e6-0659-40b5-8032-225335c346b1.png">
+                            </button>
+                        </div>
+                    </div>
+                </td>
+                <td class="action-row">
+                    <div class="action-buttons ">
+                        <div class="action-buttons">
+                            <a href="/edit-product/${item.pk}" class="add-product-button">
+                            Edit
+                        </a>
+                        <a href="/remove_product/${item.pk}" class="add-product-button svg-button">
+                            <img src="https://svgur.com/i/xtJ.svg" alt="SVG Image">
+                        </a>
+                        </div>
+                    </div>
+                </td>
+            </tr>`;
+        });
+        document.getElementById("product_table").innerHTML = htmlString
+        }
+
+        refreshProducts()
+
+        //CARD -------------------------------------------------------------------------
+        async function refreshCard() {
+            const productCard = document.getElementById("product_card");
+            productCard.innerHTML = ""; 
+            const products = await getProducts();
+            let htmlString = "";
+
+            products.forEach((item) => {
+                htmlString += `
+                    <div class="card border-0" style="padding: 10px; padding-bottom: 30px;">
+                        <img class="card-img" src="${item.fields.image_url}" alt="Product Image">
+                        <h3 style="margin: 20px 0px; font-size: 24px; font-weight: 700;">${item.fields.name}</h3>
+                        <p style="margin: 0px 0px; font-size: 16px; font-weight: 500; margin-bottom: 8px">By: ${item.fields.artist}</p>
+                        <a class="add-product-button add-card-button" href="${item.fields.detail}" target="_blank" rel="noopener noreferrer"> See Detail  </a>
+                    </div>`;
+            });
+
+            document.getElementById("product_card").innerHTML = htmlString;
+        }
+
+        refreshCard();
+
+        //ADD PRODUCT -------------------------------------------------------------------------
+        function addProduct() {
+            fetch("{% url 'main:add_product_ajax' %}", {
+                method: "POST",
+                body: new FormData(document.querySelector('#form'))
+            }).then(refreshProducts)
+
+            document.getElementById("form").reset()
+            return false
+        }
+
+        document.getElementById("button_add").onclick = addProduct
+
+        //INCREASE -------------------------------------------------------------------------
+        function increaseAmount(productId) {
+            fetch(`/increase_amount/${productId}`, {
+                method: "POST",
+                headers: {
+                    "X-CSRFToken": getCookie("csrftoken"),
+                },
+            })
+                .then(() => refreshProducts())
+                .catch((error) => console.error("Error:", error));
+        }
+
+        //DECREASE -------------------------------------------------------------------------
+        function decreaseAmount(productId) {
+            fetch(`/decrease_amount/${productId}`, {
+                method: "POST",
+                headers: {
+                    "X-CSRFToken": getCookie("csrftoken"),
+                },
+            })
+                .then(() => refreshProducts())
+                .catch((error) => console.error("Error:", error));
+        }
+
+        //GET COOKIE -------------------------------------------------------------------------
+        function getCookie(name) {
+            var cookieValue = null;
+            if (document.cookie && document.cookie !== "") {
+                var cookies = document.cookie.split(";");
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = cookies[i].trim();
+                    if (cookie.substring(0, name.length + 1) === name + "=") {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+    </script>
 
 {% endblock content %}

@@ -10,16 +10,8 @@ class Product(models.Model):
     price = models.IntegerField()
     description = models.TextField()
     amount = models.PositiveIntegerField(default=1)  
-
+    detail= models.TextField()
 
     def __str__(self):
         return self.name
     
-    def increase_amount(self, amount):
-        self.amount += amount
-        self.save()
-
-    def decrease_amount(self, amount):
-        if self.amount >= amount:
-            self.amount -= amount
-            self.save()

@@ -3,8 +3,8 @@ from main.views import show_main, create_product, show_xml, show_json, show_xml_
 from main.views import register
 from main.views import login_user 
 from main.views import logout_user
-from main import views
 from main.views import edit_product
+from main.views import get_product_json, add_product_ajax
 
 app_name = 'main'
 
@@ -18,8 +18,10 @@ urlpatterns = [
     path('register/', register, name='register'),
     path('login/', login_user, name='login'), 
     path('logout/', logout_user, name='logout'),
-    path('increase_amount/<int:product_id>/<int:amount>/', increase_product_amount, name='increase_product_amount'),
-    path('decrease_amount/<int:product_id>/<int:amount>/', decrease_product_amount, name='decrease_product_amount'),
+    path('increase_amount/<int:id>', increase_product_amount, name='increase_product_amount'),
+    path('decrease_amount/<int:id>', decrease_product_amount, name='decrease_product_amount'),
     path('remove_product/<int:id>', remove_product, name='remove_product'),
     path('edit-product/<int:id>', edit_product, name='edit_product'),
+    path('get-product/', get_product_json, name='get_product_json'),
+    path('create-product-ajax/', add_product_ajax, name='add_product_ajax')
 ]

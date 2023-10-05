@@ -13,6 +13,7 @@ from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
 import datetime
 from django.shortcuts import get_object_or_404
+from django.views.decorators.csrf import csrf_exempt
 
 @login_required(login_url='/login')
 def show_main(request):
@@ -90,15 +91,23 @@ def logout_user(request):
     response.delete_cookie('last_login')
     return response
 
-def increase_product_amount(request, product_id, amount):
-    product = get_object_or_404(Product, pk=product_id)
-    product.increase_amount(amount)
-    return HttpResponseRedirect(reverse('main:show_main'))
 
-def decrease_product_amount(request, product_id, amount):
-    product = get_object_or_404(Product, pk=product_id)
-    product.decrease_amount(amount)
-    return HttpResponseRedirect(reverse('main:show_main'))
+def increase_product_amount(request, id):
+    product = Product.objects.get(id=id)
+    product.amount += 1
+    product.save()
+    
+    response = HttpResponseRedirect(reverse("main:show_main"))
+    return response
+
+def decrease_product_amount(request, id):
+    product = Product.objects.get(id=id)
+    if (product.amount > 0):
+        product.amount -= 1
+        product.save()
+
+    response = HttpResponseRedirect(reverse("main:show_main"))
+    return response
 
 def remove_product(request, id):
     Product.objects.filter(pk=id).delete()
@@ -120,3 +129,25 @@ def edit_product(request, id):
 
     context = {'form': form}
     return render(request, "edit_product.html", context)
+
+@login_required(login_url='/login')
+def get_product_json(request):
+    product_item = Product.objects.filter(user=request.user)
+    return HttpResponse(serializers.serialize('json', product_item))
+
+@csrf_exempt
+def add_product_ajax(request):
+    if request.method == 'POST':
+        name = request.POST.get("name")
+        artist = request.POST.get("artist")
+        price = request.POST.get("price")
+        description = request.POST.get("description")
+        image_url = request.POST.get("image_url")
+        detail = request.POST.get("detail")
+        user = request.user
+        new_product = Product(name=name,artist = artist, price=price, description=description, user=user, image_url = image_url, detail=detail )
+        new_product.save()
+
+        return HttpResponse(b"CREATED", status=201)
+
+    return HttpResponseNotFound()
