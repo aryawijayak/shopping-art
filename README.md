@@ -1633,4 +1633,8 @@ Aspek   | CSS Tailwind         | Bootstrap         |
 </details>
 
 # Tugas 6
-test
+### 1.  Jelaskan perbedaan antara asynchronous programming dengan synchronous programming.
+
+### 2. 
+
+### 3. 
