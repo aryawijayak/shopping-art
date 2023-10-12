@@ -1632,9 +1632,402 @@ Aspek   | CSS Tailwind         | Bootstrap         |
 
 </details>
 
+<br>
+
 # Tugas 6
 ### 1.  Jelaskan perbedaan antara asynchronous programming dengan synchronous programming.
 
-### 2. 
+| Aspek | Asynchronous Programming | Synchronous Programming|
+|---    |---    |----   |
+|Arsitektur |Non-blocking | Blocking|
+| Ketergantungan Operasi | Tidak ada | Bergantung pada operasi sebelumnya|
+|Thread | Multi-thread (banyak operasi dapat berjalan bersamaan) | Single-thread (hanya satu operasi yang berjalan pada satu waktu)|
+|Pengiriman Permintaan	| Non-blocking (mengirim banyak permintaan sekaligus) | Blocking (mengirim satu permintaan dan menunggu jawaban sebelum mengirim yang lain) |
+| Kinerja | Meningkatkan throughput karena operasi dapat berjalan bersamaan	 | Lebih lambat dan metodis |
+| Pengalaman Pengguna	| Memperbaiki pengalaman pengguna dengan mengurangi waktu tunda	| Menghasilkan alur yang lebih cepat dalam dunia nyata |
+| Pengembangan | Memerlukan penanganan yang lebih kompleks dan pemahaman tentang rekursi dan callback | Lebih mudah dikodekan oleh pengembang dan tidak memerlukan pemahaman yang mendalam tentang konkurensi |
+| Kesesuaian | Cocok untuk aplikasi dengan banyak tugas independen	| Cocok untuk tugas yang memiliki ketergantungan kuat antar-operasi|
+| Manajemen Sumber Daya	| Lebih efisien dalam penggunaan sumber daya karena dapat mengelola operasi dengan baik	| Memerlukan lebih banyak sumber daya karena setiap operasi memerlukan penyelesaian sebelum yang lainnya |
+| Keuntungan | Meningkatkan kecepatan aplikasi untuk pengguna | Lebih mudah diimplementasikan oleh pengembang dan lebih didukung oleh berbagai bahasa pemrograman |
 
-### 3. 
+
+### 2. Dalam penerapan JavaScript dan AJAX, terdapat penerapan paradigma event-driven programming. Jelaskan maksud dari paradigma tersebut dan sebutkan salah satu contoh penerapannya pada tugas ini.
+
+Paradigma event-driven programming adalah salah satu pendekatan dalam pemrograman di mana program merespons peristiwa atau kejadian yang terjadi, seperti tindakan pengguna atau perubahan status sistem, dengan cara menanggapi atau menjalankan fungsi tertentu (event handler) yang telah ditentukan sebelumnya. Dalam paradigma ini, program tidak berjalan secara linier dari atas ke bawah seperti dalam pemrograman sekuensial, tetapi lebih bersifat reaktif terhadap peristiwa-peristiwa yang terjadi.
+
+Contoh penerapan paradigma event-driven programming pada kode JavaScript di atas adalah sebagai berikut:
+
+Pada Html, diberikan program script untuk add product, dengan kode sebagai berikut:
+
+```
+    function addProduct() {
+        fetch("{% url 'main:add_product_ajax' %}", {
+            method: "POST",
+            body: new FormData(document.querySelector('#form'))
+        }).then(refreshProducts)
+
+        document.getElementById("form").reset()
+        return false
+    }
+```
+
+Selain itu pada kode saya, saya menerapkan increase dan decrease amount dengan kode sebagai berikut
+
+```
+    //INCREASE 
+    function increaseAmount(productId) {
+        fetch(`/increase_amount/${productId}`, {
+            method: "POST",
+            headers: {
+                "X-CSRFToken": getCookie("csrftoken"),
+            },
+        })
+            .then(() => refreshProducts())
+            .catch((error) => console.error("Error:", error));
+    }
+
+    //DECREASE 
+    function decreaseAmount(productId) {
+        fetch(`/decrease_amount/${productId}`, {
+            method: "POST",
+            headers: {
+                "X-CSRFToken": getCookie("csrftoken"),
+            },
+        })
+            .then(() => refreshProducts())
+            .catch((error) => console.error("Error:", error));
+    }
+```
+
+### 3. Jelaskan penerapan asynchronous programming pada AJAX.
+
+|Konsep Asynchronous Programming pada AJAX| Penjelasan|
+|---    |---    |
+|Definisi   |Asynchronous programming pada AJAX adalah kemampuan untuk menjalankan operasi tanpa harus menunggu respons dari server sebelum melanjutkan eksekusi program, memungkinkan pengiriman permintaan ke server dan pengolahan respons secara asinkron. |
+|Mengapa Penting   |Memungkinkan aplikasi web untuk tetap responsif dan interaktif saat berkomunikasi dengan server tanpa menghentikan eksekusi program. Ini meningkatkan efisiensi dan pengalaman pengguna. |
+|Teknik yang Digunakan   | Pertama `Callback Functions`: Menentukan tindakan yang akan diambil ketika respons dari server diterima. - Promise: Pendekatan terstruktur yang memungkinkan manajemen operasi asinkron yang lebih baik. Kedua `async/await`: Membuat kode lebih mudah dipahami dengan menangani asinkronisitas dalam gaya mirip synchronous.   |
+|Manfaat   | `(1)` Memberikan pengalaman pengguna yang responsif. `(2)` Meningkatkan efisiensi dan kinerja aplikasi. `(3)` Memungkinkan operasi berjalan bersamaan tanpa harus menunggu yang lain. `(4)` Penting dalam pengembangan aplikasi web dinamis yang sering berinteraksi dengan server.  |
+
+## 4. Pada PBP kali ini, penerapan AJAX dilakukan dengan menggunakan Fetch API daripada library jQuery. Bandingkanlah kedua teknologi tersebut dan tuliskan pendapat kamu teknologi manakah yang lebih baik untuk digunakan.
+
+| Aspek | Fetch API	 | jQuery|
+|---    |---    |---   |
+|Ukuran	   |Lebih ringan karena merupakan bagian dari JavaScript modern |Lebih berat karena library tambahan|
+|Kinerja    | Lebih cepat karena bekerja langsung dengan promise dan response objek |Sedikit lebih lambat karena perlu menginisiasi library jQuery |
+|Kecepatan Pengembangan |Memerlukan lebih banyak penulisan kode, terutama untuk menangani respons HTTP |Memudahkan pengembangan dengan sintaksis yang lebih pendek dan mudah digunakan  |
+|Ukuran File    |Menghasilkan kode yang lebih ringkas, mengurangi ukuran file JavaScript    |Menghasilkan kode yang lebih ringkas, mengurangi ukuran file JavaScript  |
+|Modularitas    |Lebih modular, memungkinkan penggunaan modul lain untuk tugas tertentu (seperti Axios untuk HTTP requests)   |Tidak se-modular karena jQuery adalah satu kesatuan library.  |
+|Kompatibilitas   |Dapat berjalan di semua browser modern dan merupakan bagian dari standar JavaScript    |Kompatibel dengan banyak browser lama, tetapi perlu perhatian khusus terhadap versi jQuery yang digunakan   |
+|Pembelajaran    |Memerlukan pemahaman yang lebih baik tentang promise, async/await, dan manipulasi objek respons   | Lebih mudah dipelajari oleh pemula dengan abstraksi tingkat tinggi dan dokumentasi yang baik  |
+|Kelebihan Utama    |	Performa yang lebih baik dan lebih ringan untuk proyek-proyek besar   |Pengembangan cepat, terutama untuk tugas-tugas kecil hingga menengah  |
+|Penggunaan di Industri   |Lebih umum digunakan dalam proyek-proyek modern dan besar    |Tetap digunakan dalam banyak proyek web lama, tetapi sedang digantikan oleh JavaScript modern di proyek-proyek baru.   |
+
+`Pendapat Saya`
+
+Menurut saya, Fetch API lebih unggul daripada jQuery karena lebih terfokus pada AJAX, ringan dalam penggunaan memori, dan berkinerja lebih cepat. Fetch API juga merupakan bagian dari JavaScript yang tersedia secara native di browser modern, menghilangkan kebutuhan akan library tambahan seperti jQuery. Penggunaan promise dalam Fetch API membuat penanganan permintaan asinkron lebih mudah dipahami, dan sebagai teknologi yang lebih baru, Fetch API mendapatkan dukungan yang kuat dari browser terkini. Dengan kontrol yang lebih besar terhadap permintaan HTTP, Fetch API memungkinkan optimisasi yang lebih baik dalam proyek-proyek baru. Meskipun jQuery masih digunakan secara luas dalam proyek lama, Fetch API menjadi pilihan yang lebih baik untuk proyek-proyek baru karena efisiensinya dan kesesuaian dengan pendekatan JavaScript yang lebih modern.
+
+### 5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+
+- [x] Mengubah tugas 5 yang telah dibuat sebelumnya menjadi menggunakan AJAX.
+  - [x] AJAX GET
+    - [x] Ubahlah kode tabel data item agar dapat mendukung AJAX GET.
+        Untuk mengubah kode tabel menjadi tabel pertama tama kita harus membuat fungsi pada `main.html` untuk memanggil tabel, dengan mengubah html tabel menjadi kode berikut ini
+
+        ```
+        <table id="product_table"></table>
+        ```
+        
+        Selain itu untuk memanggil kartu tambahkan juga kode card
+        ```
+        <div id="product_card" class="card-container"></div>
+        ```
+
+    - [x] Lakukan pengambilan task menggunakan AJAX GET.
+        Buat Fungsi pada `views.py` untuk membuat fungsi mengambil get product 
+
+        ```
+        @login_required(login_url='/login')
+        def get_product_json(request):
+            product_item = Product.objects.filter(user=request.user)
+            return HttpResponse(serializers.serialize('json', product_item))
+        ```
+
+        Selanjutnya setelah membuat fungsi pada views.py, buat routing pada urls.py, import get product json agar bisa di tambahkan, selanjutnya agar bisa dipanggil pada html, tambahkan `urlspath` dengan kode berikut
+        ```
+        path('get-product/', get_product_json, name='get_product_json'),
+        ```
+
+        Setelah menambahkan urls.py, buat javascript dengan menambahkan `<script>` oada `main.html` dengan menambahkan kode:
+        ```
+        async function getProducts() {
+            return fetch("{% url 'main:get_product_json' %}").then((res) => res.json())
+        }
+        ```
+
+  - [x] AJAX POST
+    - [x] Buatlah sebuah tombol yang membuka sebuah modal dengan form untuk menambahkan item.
+        Untuk membuat tombol membuka modal form untuk menambahkan item menambahkannya pada navbar, dengan memanggil:
+        ```
+        <a class="nav-link" type="button"  data-bs-target="#exampleModal" data-bs-toggle="modal" style="color: #4162FF; font-weight: 600; padding-right: 20px;" >Make Product by Ajax</a>
+
+        ```
+        Dengan kode modal pada html untuk membuat modal yang nantinya berguna untuk add product:
+        ```
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Product</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="form" onsubmit="return false;">
+                            {% csrf_token %}
+                            <div class="mb-3">
+                                <label for="name" class="col-form-label">Name:</label>
+                                <input type="text" class="form-control" id="name" name="name"></input>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="name" class="col-form-label">Artist:</label>
+                                <input type="text" class="form-control" id="artist" name="artist"></input>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="price" class="col-form-label">Price:</label>
+                                <input type="number" class="form-control" id="price" name="price"></input>
+                            </div>
+                            <div class="mb-3">
+                                <label for="description" class="col-form-label">Description:</label>
+                                <textarea class="form-control" id="description" name="description"></textarea>
+                            </div>
+                            <div class="mb-4">
+                                <label for="image_url" class="col-form-label">Image Url:</label>
+                                <textarea class="form-control" id="image_url" name="image_url"></textarea>
+                            </div>
+                            <div class="mb-4">
+                                <label for="detail" class="col-form-label">Detail:</label>
+                                <textarea class="form-control" id="detail" name="detail"></textarea>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="button_add" data-bs-dismiss="modal">Add Product</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        ```
+
+    - [x] Buatlah fungsi *view* baru untuk menambahkan item baru ke dalam basis data.
+        Pada file `views.py` import @crsf_exempt dan menambahkan fungsi add product ajax pada code:
+        ```
+        @csrf_exempt
+        def add_product_ajax(request):
+            if request.method == 'POST':
+                name = request.POST.get("name")
+                artist = request.POST.get("artist")
+                price = request.POST.get("price")
+                description = request.POST.get("description")
+                image_url = request.POST.get("image_url")
+                detail = request.POST.get("detail")
+                user = request.user
+                new_product = Product(name=name,artist = artist, price=price, description=description, user=user, image_url = image_url, detail=detail )
+                new_product.save()
+
+                return HttpResponse(b"CREATED", status=201)
+
+            return HttpResponseNotFound()
+        
+        ```
+    - [x] Buatlah *path* `/create-ajax/` yang mengarah ke fungsi *view* yang baru kamu buat.
+        Setelah menambahkan fungi add_product_ajax pada path, dengan cara membuka `urls.py` setelah itu mengimpor `add_product_ajax` dan menambahkan `urlpatterns` dengan code:
+        ```
+        path('create-product-ajax/', add_product_ajax, name='add_product_ajax'),
+        ```
+
+    - [x] Hubungkan form yang telah kamu buat di dalam modal kamu ke *path* `/create-ajax/`.
+        Untuk menghubungkan form dengan path `create-ajax` buat function `addProduct` kedalam kode `<script>`, berikut merupakan kodenya:
+        ```
+        function addProduct() {
+            fetch("{% url 'main:add_product_ajax' %}", {
+                method: "POST",
+                body: new FormData(document.querySelector('#form'))
+            }).then(refreshProducts).then(refreshCard)
+
+            document.getElementById("form").reset()
+            return false
+        }
+
+        document.getElementById("button_add").onclick = addProduct
+        
+        ```
+
+    - [x] Lakukan *refresh* pada halaman utama secara asinkronus untuk menampilkan daftar item terbaru tanpa *reload* halaman utama secara keseluruhan.
+        Setelah itu buat fungsi addProduct, tambahkan gungsi`refreshproduct` untuk tabel dan `refreshcard` untuk card dengan kode sebagai berikut:
+        Implementasi Tabel:
+        ```
+        async function refreshProducts() {
+            document.getElementById("product_table").innerHTML = ""
+            const products = await getProducts()
+            let htmlString = `<tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Description</th>
+                <th>Date Added</th>
+                <th> Amount </th>
+                <th> Action </th>
+            </tr>`
+
+        products.forEach((item) => {
+            htmlString += `<tr>
+                <td>${item.fields.name}</td>
+                <td>$${item.fields.price}</td>
+                <td class="description" style ="max-width: 400px; overflow-y: auto;">${item.fields.description}</td>
+                <td>${item.fields.date_added}</td>
+                <td class="center-text action-row">
+                    <div class="action-buttons">
+                        <div class="action-buttons">
+                            <button onclick="decreaseAmount(${item.pk})" class="add-product-button add-amount-button" style="padding: 20px 0px;">
+                                <img class="amount-img" src="https://user-images.githubusercontent.com/119391657/271369281-5bed9a9f-af4f-4278-b7ef-d9bb22694678.png">
+                            </button>
+
+                            <span id="amount-${item.pk}">${item.fields.amount}</span>
+
+                            <button onclick="increaseAmount(${item.pk})" class="add-product-button add-amount-button" style ="padding: 20px 0px;">
+                                <img class="amount-img" src="https://user-images.githubusercontent.com/119391657/271369291-047353e6-0659-40b5-8032-225335c346b1.png">
+                            </button>
+                        </div>
+                    </div>
+                </td>
+                <td class="action-row">
+                    <div class="action-buttons ">
+                        <div class="action-buttons">
+                            <a href="/edit-product/${item.pk}" class="add-product-button">
+                            Edit
+                        </a>
+                        <button onClick="delete_product_ajax(${item.pk})" class="add-button add-product-button svg-button">
+                            <img src="https://svgur.com/i/xtJ.svg" alt="SVG Image">
+                        </button>
+                        </div>
+                    </div>
+                </td>
+            </tr>`;
+        });
+        document.getElementById("product_table").innerHTML = htmlString
+        }
+
+        refreshProducts()
+        ```
+
+        Implementasi Card:
+        ```
+        async function refreshCard() {
+            const productCard = document.getElementById("product_card");
+            productCard.innerHTML = ""; 
+            const products = await getProducts();
+            let htmlString = "";
+
+            products.forEach((item) => {
+                htmlString += `
+                    <div class="card border-0" style="padding: 10px; padding-bottom: 30px;">
+                        <img class="card-img" src="${item.fields.image_url}" alt="Product Image">
+                        <h3 style="margin: 20px 0px; font-size: 24px; font-weight: 700;">${item.fields.name}</h3>
+                        <p style="margin: 0px 0px; font-size: 16px; font-weight: 500; margin-bottom: 8px">By: ${item.fields.artist}</p>
+                        <a class="add-product-button add-card-button" href="${item.fields.detail}" target="_blank" rel="noopener noreferrer"> See Detail  </a>
+                    </div>`;
+            });
+
+            document.getElementById("product_card").innerHTML = htmlString;
+        }
+
+        refreshCard();
+        ```
+
+    - [x] Menambahkan Ajax untuk Menambahkan dan mengurangi Product
+        Untuk menambahkan dan mengurangi amount product secara ajax, bisa menambahkan fungsi pada `<script>` sebagai berikut
+        ```
+        function increaseAmount(productId) {
+            fetch(`/increase_amount/${productId}`, {
+                method: "POST",
+                headers: {
+                    "X-CSRFToken": getCookie("csrftoken"),
+                },
+            })
+                .then(() => refreshProducts())
+                .catch((error) => console.error("Error:", error));
+        }
+        
+        function decreaseAmount(productId) {
+            fetch(`/decrease_amount/${productId}`, {
+                method: "POST",
+                headers: {
+                    "X-CSRFToken": getCookie("csrftoken"),
+                },
+            })
+                .then(() => refreshProducts())
+                .catch((error) => console.error("Error:", error));
+        }
+        ```
+
+        Untuk memanggil fungsi tersebut dapat dilakukan dengan cara:
+        Pengurangan Amount
+
+        ```
+        <button onclick="decreaseAmount(${item.pk})" class="add-product-button add-amount-button" style="padding: 20px 0px;">
+        ```
+
+        Penambahan Amount
+        ```
+        <button onclick="increaseAmount(${item.pk})" class="add-product-button add-amount-button" style ="padding: 20px 0px;">
+        ```
+    - [x] Menambahkan Ajax untuk menghapus Product
+        Tambahkan fungsi delete product ajax pada `views.py`dengan kode berikut
+        ```
+        @csrf_exempt
+            def remove_product_ajax(request, id):
+                Product.objects.filter(pk=id).delete()
+                return HttpResponseRedirect(reverse("main:show_main"))
+        ```
+
+        Masukan pada `urls.py` dengan mengimport `remove_product_ajax` dan memasukan kode berikut:
+
+        ```
+        path('remove_product_ajax/<int:id>', remove_product_ajax , name='remove_product_ajax'),
+        ```
+
+        Setelah itu buat javascript dengan menambahkan kode pada `<script>` sebagai berikut:
+        ```
+        function delete_product_ajax(ID) {
+            fetch(`/remove_product_ajax/${ID}`, {
+                method: 'DELETE',
+            }).then(refreshProducts).then(refreshCard)
+            }
+        document.getElementById("add-button").onclick = addProduct
+        ```
+
+        Untuk memanggilnya pada tabel gunakan kode berikut:
+
+        ```
+        <button onClick="delete_product_ajax(${item.pk})" class="add-button add-product-button svg-button">
+        ``` 
+
+  - [x] Melakukan perintah `collectstatic`.
+    Gunakan perintah collectstatic untuk memisahkan ke folder staticfiles, pertama tama tambahkan `setting.py` 
+    ```
+    STATIC_URL = 'static/'
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+    ```
+    
+    Setelah itu menjalankan perintah
+    ```
+    python manage.py collectstatic
+    ```
+
+- [x] Melakukan `add`-`commit`-`push` ke GitHub.
+    Setelah menyelesaikan semua step step diatas, saatnya untuk add-commit push ke repositoi github kita. Caranya dengan pertama tama melakukan  add dengan command `git add .` setelah itu commit dengan `git commit -m <Pesan> ` dan terakhir mempushnya pada branch main dengan `git push -u origin main`
+
+- [x] Melakukan *deployment* ke PaaS PBP Fasilkom UI dan sertakan tautan aplikasi pada file `README.md`.
+    - DOKKU_APP_NAME = `UsernameSSO-tugas`
+    Pastikan file proyek shopping_art terbaru sudah terupdate pada repositori github. Setelah sudah memastikan bahwa code terbaru, tambahkan Repository secrets yaitu `DOKKU_APP_NAME` , `DOKKU_SERVER_IP` , `DOKKU_SSH_PRIVATE_KEY`. Setelah itu tunggu website terdeploy pada domain pbp.cs.ui.ac.id

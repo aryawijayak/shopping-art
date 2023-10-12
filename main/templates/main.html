@@ -357,6 +357,8 @@
     <div class="text-center">
         <h2 class="total text-title-semi" style="padding-top: 28px; padding-bottom: 12px;">Anda telah membuat karya sebanyak: {{total}} karya 🎨🖼️</h2>
     </div>
+
+<!-- Tabel ------------------------------------------------------------------- -->
     <table id="product_table"></table>
 
 <!-- Sesi Login------------------------------------------------------------------- -->
@@ -465,9 +467,9 @@
                             <a href="/edit-product/${item.pk}" class="add-product-button">
                             Edit
                         </a>
-                        <a href="/remove_product/${item.pk}" class="add-product-button svg-button">
+                        <button onClick="delete_product_ajax(${item.pk})" class="add-button add-product-button svg-button">
                             <img src="https://svgur.com/i/xtJ.svg" alt="SVG Image">
-                        </a>
+                        </button>
                         </div>
                     </div>
                 </td>
@@ -505,7 +507,7 @@
             fetch("{% url 'main:add_product_ajax' %}", {
                 method: "POST",
                 body: new FormData(document.querySelector('#form'))
-            }).then(refreshProducts)
+            }).then(refreshProducts).then(refreshCard)
 
             document.getElementById("form").reset()
             return false
@@ -524,7 +526,7 @@
                 .then(() => refreshProducts())
                 .catch((error) => console.error("Error:", error));
         }
-
+        
         //DECREASE -------------------------------------------------------------------------
         function decreaseAmount(productId) {
             fetch(`/decrease_amount/${productId}`, {
@@ -536,7 +538,15 @@
                 .then(() => refreshProducts())
                 .catch((error) => console.error("Error:", error));
         }
-
+        
+        //Delete -------------------------------------------------------------------------
+        function delete_product_ajax(ID) {
+            fetch(`/remove_product_ajax/${ID}`, {
+                method: 'DELETE',
+            }).then(refreshProducts).then(refreshCard)
+            }
+        document.getElementById("add-button").onclick = addProduct
+        
         //GET COOKIE -------------------------------------------------------------------------
         function getCookie(name) {
             var cookieValue = null;

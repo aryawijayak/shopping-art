@@ -12,7 +12,6 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
 import datetime
-from django.shortcuts import get_object_or_404
 from django.views.decorators.csrf import csrf_exempt
 
 @login_required(login_url='/login')
@@ -109,11 +108,10 @@ def decrease_product_amount(request, id):
     response = HttpResponseRedirect(reverse("main:show_main"))
     return response
 
-def remove_product(request, id):
+@csrf_exempt
+def remove_product_ajax(request, id):
     Product.objects.filter(pk=id).delete()
-
-    response = HttpResponseRedirect(reverse("main:show_main"))
-    return response
+    return HttpResponseRedirect(reverse("main:show_main"))
 
 def edit_product(request, id):
     # Get product berdasarkan ID
