@@ -21,7 +21,7 @@
 - [x] Membuat aplikasi dengan nama main pada proyek tersebut.
     Pada langkah ini, saya menambahkan folfer `templates` dan menambahkan file `main` sebagai html utama. Untuk membuatnya sebagai bagian int, harus menjalankan perintah `python3 manage.py startapp main`. setelah itu, mendaftarkan folder ke dalam proyek dengan menambahkan main pada `INSTALLED_APPS` yang berada pada folder `settings.py`.
 
-
+ 
 - [x] Melakukan routing pada proyek agar dapat menjalankan aplikasi main.
     Pada tahap ini, melakukan routing agar aplikasi `main` dapat diakses melalui projek hingga aplikasi dan juga perambaan web. aplikasi main akan menambahkan path ke variabel `urlpatterns` pada `urls.py`.  Setlah itu, pada variabel `urlpatterns` terdapat path URL `main/` yang mendefinisikan rute ke file `urls.py` pada aplikasi `main`.
 
